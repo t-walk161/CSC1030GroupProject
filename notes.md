@@ -2,4 +2,3 @@
 
 Basic Idea: Heist Game with multiple endings based on desicions made throughout the games middle stage
 
-Basic Story:
