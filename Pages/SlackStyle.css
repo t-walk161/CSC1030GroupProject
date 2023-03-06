@@ -12,12 +12,8 @@ h1{
 h2{
     font-size: 48px;
 }
-p{
-    text-align: center;
-    font-size: 36px;
-    font-family: 'Century', sans-serif;
-}
-button{
+
+.menuButton{
     width: 90%;
     padding:1em;
     margin: 1em auto;
