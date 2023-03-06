@@ -40,5 +40,18 @@ S3:
 
 Opens on interior of the bank vault, if user choose to blow up door, there is a smoke effect, otherwise nothing happens. There is a security gate inside the vault that is secured with a code pad. The code will be randomly generated using the random code API. The code is hidden on the sticky note somewhere. Once the user inputs the code the door swings open and the user can drag and drop money into the cash bags of the remaining crew members. The user then selects to exit the vault.
 
+S4:
+
+Screen opens in to back interior again, on the way out a team member will trip and fall. The user can choose to continue on without them, sacrificing their portion of the take, or spend 30 seconds to help them, saving their take.
+
+S5 (END):
+
+If the user has successfully escaped, they will be presented with a mission success screen, displaying tracked statistics about their play through.
+
+
+FAILURE:
+
+The user is presented with 1 of a selection of messages informing them that they have failed.
+
 
 TRACK 2 Quiet :
