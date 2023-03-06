@@ -8,9 +8,6 @@ Tracked Stats:
 -No. Of Decisions Made
 -Remaining Team Members - Depends on take
 
-
-
-
 PLAY SCREEN:
 Background Image
 Play & Exit Button
