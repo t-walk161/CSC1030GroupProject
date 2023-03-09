@@ -1,9 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
         <title>The Slack Job: Start</title>
+        <script type = "text/javascript" src = "script.js"></script>
+        <link rel="stylesheet" href="SlackStyle.css">
+        <style>
+            body{
+                margin: 0;
+                height: 100%;
+            }
+            #enterName, #modeSelect{
+                background-color: black;
+                padding: 1em;
+                width: 40%;
+                text-align: center;
+            }
+            #backgroundImg{
+                background-image: url('../photos/blueprint-4056027.png');
+            }
+            #LoudSelect, #QuietSelect{
+                display: block;
+                width: 90%;
+                margin: 5%;
+                font-size: 30px;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
-        
+        <div id = "backgroundImg" class = "bgImgBox">
+            <div id = "enterName" class="centerMe showMe">
+                <label for = "enterNameBox">Enter your name:</label>
+                <input type = "text" id = "enterNameBox"><br><br>
+                <button type = "submit" id = "enterNameSubmit" onclick = "inputName();">Ok</button>
+            </div>
+            <div id = "modeSelect" class = "centerMe hideMe">
+                <h3>Please Select a Difficulty and Gamemode</h3>
+                <label for = "difficultySelect" id = "difficultyLabel">Please Select a Difficulty</label>
+                <select id = "difficultySelect">
+                    <option value = "easy">Easy</option>
+                    <option value = "med">Medium</option>
+                    <option value = "hard">Hard</option>
+                </select>
+                <button id = "LoudSelect" type = "button">Loud</button>
+                <button id = "QuietSelect" type = "button">Quiet</button><br><br>
+                
+            </div>
+        </div>
     </body>
 </html>
