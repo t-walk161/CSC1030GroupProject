@@ -8,3 +8,4 @@ Bomb
 Drill
 Cash Bags
 Cash
+Planning Screen < Image by Reto Scheiwiller from Pixabay
