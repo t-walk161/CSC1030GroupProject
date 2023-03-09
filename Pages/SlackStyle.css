@@ -19,3 +19,26 @@ h2{
     font-size: 23px;
     font-weight: bold;
 }
+.centerMe{
+    text-align: center;
+    margin: auto;
+    margin-top: 20%;
+    margin-bottom: 20%
+}
+.showMe{
+    display: block;
+}
+.hideMe{
+    display: none;
+}
+.bgImgBox{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+}
+
