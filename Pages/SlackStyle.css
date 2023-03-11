@@ -1,45 +1,64 @@
-body{
+body {
     background-color: rgb(46, 46, 46);
     color: rgb(226, 223, 223)
-    
-    }
-h1, h2, h3, h4, h5, h6{
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-align: center;
 }
-h1{
+
+h1 {
     font-size: 72px;
 }
-h2{
+
+h2 {
     font-size: 48px;
 }
 
-.menuButton{
+.menuButton {
     width: 50%;
-    padding:1em;
+    padding: 1em;
     margin: 1em auto;
     font-size: 23px;
     font-weight: bold;
 }
-.centerMe{
+
+.menuButton:hover {
+    opacity: 1;
+}
+
+.menuButton:not(:hover) {
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.centerMe {
     text-align: center;
     margin: auto;
     margin-top: 20%;
     margin-bottom: 20%
 }
-.showMe{
+
+.showMe {
     display: block;
 }
-.hideMe{
+
+.hideMe {
     display: none;
 }
-.bgImgBox{
+
+.bgImgBox {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position:absolute;
-    top:0px;
-    right:0px;
-    bottom:0px;
-    left:0px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
 }
-
