@@ -20,21 +20,23 @@ function inputName(){
     }
 }
 //This does not work, need to fix
-function modeSelect(event){
+function setDifficulty(){
     var timeRemaining = 0;
-    var mode = event.target.innerHTML;
-    switch(mode){
+    switch(document.getElementById("difficultySelect").value){
         case "easy": timeRemaining = 300000; break; //5 Mins
-        case "medium": timeRemaining = 180000; break; //3 Mins
+        case "med": timeRemaining = 180000; break; //3 Mins
         case "hard": timeRemaining = 90000; break; //1.5 Mins
     }
     sessionStorage.setItem("timeRemaining", timeRemaining);
-    if (mode == "Loud"){
-        window.location.href = "outside.html";
-    }
-    else{
-        alert("Quiet Mode is not yet available");
-    }
+    console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
+}
+function loudSelect(){
+    setDifficulty();
+    alert("Loud Mode Selected");
+}
+function quietSelect(){
+    setDifficulty();
+    alert("Quiet Mode Selected");
 }
 //When using the typeText function, the first element inputted should be the id of the element you want to type in, and the second should be the text you want to type.
 function typeText(elementID, text) {
