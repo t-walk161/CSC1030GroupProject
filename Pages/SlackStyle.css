@@ -26,10 +26,12 @@ h2 {
     margin: 1em auto;
     font-size: 23px;
     font-weight: bold;
+
 }
 
 button:hover {
     opacity: 1;
+    cursor: pointer;
 }
 
 button:not(:hover) {
