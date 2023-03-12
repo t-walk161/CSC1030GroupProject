@@ -1,3 +1,4 @@
+Maybe an image for the home screen? Group of characters / bank / vault 
 Outside The Bank
 Bank Lobby
 Outside Bank Vault
