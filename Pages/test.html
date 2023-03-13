@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Adventure Game</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+		h1 {
+			font-size: 3em;
+			margin-top: 50px;
+		}
+		section {
+			display: none;
+		}
+		section:first-of-type {
+			display: block;
+		}
+		button {
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #eee;
+			color: #333;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+	</style>
+</head>
+<body>
+	<h1>Text Adventure Game</h1>
+	<section id="scene1">
+		<p>This is scene 1.</p>
+		<button onclick="showScene(2)">Next</button>
+	</section>
+	<section id="scene2">
+		<p>This is scene 2.</p>
+		<button onclick="showScene(3)">Next</button>
+		<button onclick="showScene(1)">Back</button>
+	</section>
+	<section id="scene3">
+		<p>This is scene 3.</p>
+		<button onclick="showScene(2)">Back</button>
+	</section>
+	<script>
+		function showScene(num) {
+			var sections = document.getElementsByTagName("section");
+			for (var i = 0; i < sections.length; i++) {
+				sections[i].style.display = "none";
+			}
+			document.getElementById("scene" + num).style.display = "block";
+		}
+	</script>
+</body>
+</html>
