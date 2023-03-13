@@ -84,3 +84,8 @@ button:not(:hover) {
     font-size: 30px;
     text-align: center;
 }
+p.credits{
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Century', sans-serif;
+}
