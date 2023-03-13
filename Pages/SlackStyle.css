@@ -33,11 +33,15 @@ h2 {
     -o-border-radius: 15px;
 }
 
-.optionButton {
-    width: 25%;
-    height: 40px;
+
+  
+  .optionButton {
+    text-align: center;
+    display: inline-block; /* Display buttons side by side */
+    width: 30%;
+    height: 20%;
     padding: 10px;
-    margin: 10px auto;
+    margin: 10px;
     font-size: 18px;
     font-weight: bold;
     color: black;
@@ -47,7 +51,9 @@ h2 {
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-}
+  }
+  
+  
 
 
 #buttons {
