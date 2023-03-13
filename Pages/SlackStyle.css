@@ -26,6 +26,11 @@ h2 {
     margin: 1em auto;
     font-size: 23px;
     font-weight: bold;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 
 button:hover {
