@@ -33,13 +33,8 @@ function setDifficulty(){
     sessionStorage.setItem("timeRemaining", timeRemaining);
     console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
 }
-function loudSelect(){
-    setDifficulty();
-    alert("Loud Mode Selected");
-}
-function quietSelect(){
-    setDifficulty();
-    alert("Quiet Mode Selected");
+function startGame(){
+    document.getElementById("menuMusic").pause();
 }
 //When using the typeText function, the first element inputted should be the id of the element you want to type in, and the second should be the text you want to type.
 function typeText(elementID, text) {
