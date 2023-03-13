@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>COPY-ONLY TEMPLATE NAME</title>
+    <title>The Slack Job</title>
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="SlackStyle.css">
     <style>
@@ -27,8 +27,17 @@
 </head>
 
 <body>
+    <audio src="../Audio/menuSong.mp3" autoplay loop></audio>
     <div id="backgroundImg" class="bgImgBox">
-
+        <section id = "scene0">
+            <div id = "header">
+                <h1>THE SLACK JOB</h1>
+            </div>
+            <div id ="buttons">
+                <button class = "menuButton" type="button" onclick="showScene(1);">Start Game</button>
+                <button class = "menuButton" type="button" onclick="window.location.href='credits.html'">Credits</button>
+            </div>
+        </section>
         <section id="scene1">
             <div id = "enterName" class="centerMe showMe">
                 <label for = "enterNameBox">Enter your name:</label>
@@ -43,32 +52,22 @@
                     <option value = "med">Medium</option>
                     <option value = "hard">Hard</option>
                 </select>
-                <button id = "LoudSelect" value = "Loud" type = "button" onclick="loudSelect();">Loud</button>
-                <button id = "QuietSelect" value = "Quiet" type = "button" onclick="loudSelect();">Quiet</button><br><br>
+                <button id = "LoudSelect" value = "Loud" type = "button" onclick="setDifficulty(); showScene(2);">Loud</button>
+                <button id = "QuietSelect" value = "Quiet" type = "button" onclick="setDifficulty(); alert('Quiet Mode is not yet available');">Quiet</button><br><br>
             </div>
-            <button onclick="showScene(2)">Next</button>
         </section>
 
-        <section id="scene2">
+        <section id="scene2" class = "hideMe">
             <p>This is scene 2.</p>
             <button onclick="showScene(3)">Next</button>
             <button onclick="showScene(1)">Back</button>
         </section>
 
-        <section id="scene3">
+        <section id="scene3" class = "hideMe">
             <p>This is scene 3.</p>
             <button onclick="showScene(2)">Back</button>
         </section>
 
-        <script>
-            function showScene(num) {
-                var sections = document.getElementsByTagName("section");
-                for (var i = 0; i < sections.length; i++) {
-                    sections[i].style.display = "none";
-                }
-                document.getElementById("scene" + num).style.display = "block";
-            }
-        </script>
     </div>
 </body>
 
