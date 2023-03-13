@@ -34,20 +34,21 @@ h2 {
 }
 
 .optionButton {
-        width: 25%;
-        height: 40px;
-        padding: 10px;
-        margin: 10px;
-        font-size: 18px;
-        font-weight: bold;
-        color: black;
-        border: none;
-        border-radius: 20px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
+    width: 25%;
+    height: 40px;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
+
 
 #buttons {
     text-align: center;
@@ -105,7 +106,8 @@ button:not(:hover) {
     font-size: 30px;
     text-align: center;
 }
-p.credits{
+
+p.credits {
     text-align: center;
     font-size: 36px;
     font-family: 'Century', sans-serif;
