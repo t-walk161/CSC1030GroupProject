@@ -54,3 +54,10 @@ function typeText(elementID, text) {
         }
     }, 10);
 }
+function showScene(num) {
+    var sections = document.getElementsByTagName("section");
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+    }
+    document.getElementById("scene" + num).style.display = "block";
+}
