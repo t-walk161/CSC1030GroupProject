@@ -55,4 +55,5 @@ function showScene(num) {
         sections[i].style.display = "none";
     }
     document.getElementById("scene" + num).style.display = "block";
+    document.getElementById("backgroundImg").style.backgroundImage = "url('../photos/" + num + ".png')";
 }
