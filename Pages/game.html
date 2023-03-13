@@ -32,9 +32,9 @@
             <div id="header">
                 <h1>THE SLACK JOB</h1>
             </div>
-            <div id="buttons">
-                <button class="menuButton" type="button" onclick="showScene(1);">Start Game</button>
-                <button class="menuButton" type="button" onclick="window.location.href='credits.html'">Credits</button>
+            <div id ="buttons">
+                <button class = "menuButton" type="button" onclick="showScene(1);">Start Game</button>
+                <button class = "menuButton" type="button" onclick="showScene(99);">Credits</button>
             </div>
         </section>
         <section id="scene1">
@@ -58,15 +58,39 @@
             </div>
         </section>
 
-        <section id="scene2" class="hideMe">
-            <h2>You are outside the bank.</h2> <!--Exterior of the bank-->
-                <button id="optionButton" type="button" onclick="showScene(3)">Enter the bank</button>
-                <button id="optionButton" type="button" onclick="showScene(1)">Back</button>
+        <section id="scene2">
+            <p>This is scene 2.</p>
+            <button onclick="showScene(3)">Next</button>
+            <button onclick="showScene(1)">Back</button>
         </section>
 
-        <section id="scene3" class="hideMe">
+        <section id="scene3">
             <p>This is scene 3.</p>
             <button class="menuButton" type="button" onclick="showScene(2)">Back</button>
+        </section>
+
+
+
+
+
+
+
+        <section id = "scene99">
+            <h1>The Slack Job</h1>
+        <h2>By</h2>
+        <p class = "credits">Taylor Walker - 40363058<br>
+            Thomas Dillon - 40363297<br>
+            Adam Stafford - 40365651<br>
+            Micheal Waite - USELESS<br>
+            Caleb Connor - 40375909
+        </p><br>
+        <h2>Image & Music Credits</h2>
+        <p class = "credits">
+            Menu Song - Riding Into The Sun, By Telecasted
+        </p>
+        <div id ="buttons">
+            <button class = "menuButton" type="button" onclick="showScene(0);">Back To Start Screen</button>
+        </div>
         </section>
 
     </div>
