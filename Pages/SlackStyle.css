@@ -33,7 +33,9 @@ h2 {
     -o-border-radius: 15px;
 
 }
-
+#buttons{
+    text-align: center;
+}
 button:hover {
     opacity: 1;
     cursor: pointer;
@@ -68,4 +70,17 @@ button:not(:hover) {
     right: 0px;
     bottom: 0px;
     left: 0px;
+}
+#enterName, #modeSelect{
+    background-color: black;
+    padding: 1em;
+    width: 40%;
+    text-align: center;
+}
+#LoudSelect, #QuietSelect{
+    display: block;
+    width: 90%;
+    margin: 5%;
+    font-size: 30px;
+    text-align: center;
 }
