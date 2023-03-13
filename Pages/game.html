@@ -6,7 +6,7 @@
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" href="SlackStyle.css">
     <style>
-        #backgroundImg{
+        #backgroundImg {
             background-image: url("../photos/0.png");
         }
 
@@ -32,9 +32,9 @@
             <div id="header">
                 <h1>THE SLACK JOB</h1>
             </div>
-            <div id ="buttons">
-                <button class = "menuButton" type="button" onclick="showScene(1);">Start Game</button>
-                <button class = "menuButton" type="button" onclick="showScene(99);">Credits</button>
+            <div id="buttons">
+                <button class="menuButton" type="button" onclick="showScene(1);">Start Game</button>
+                <button class="menuButton" type="button" onclick="showScene(99);">Credits</button>
             </div>
         </section>
         <section id="scene1">
@@ -58,27 +58,37 @@
             </div>
         </section>
 
-        <section id="scene2">
-            <p>This is scene 2.</p> <!--- Scene 2 Outside the bank -->
-            <button class="optionButton" type="button" onclick="showScene(3)">Enter the bank</button>
-            <button class="optionButton" type="button" onclick="showScene(1)">Back</button>
+        <section id="scene2"> <!--- Scene 2 Outside the bank -->
+            <p>This is scene 2.</p>
+            <div class="buttonContainer">
+                <button class="optionButton" type="button" onclick="showScene(3)">Enter the bank</button>
+                <button class="optionButton" type="button" onclick="showScene(1)">Back</button>
+            </div>
         </section>
 
-        <section id="scene3">
-            <p>This is scene 3.</p> <!--- Scene 3 Inside the bank -->
-            <button class="optionButton" type="button" onclick="showScene(4)">Start the heist</button>
+        <section id="scene3"> <!--- Scene 3 Inside the bank -->
+            <p>This is scene 3.</p>
+            <div class="buttonContainer">
+                <button class="optionButton" type="button" onclick="showScene(4)">Start the heist</button>
+            </div>
         </section>
 
-        <section id="scene4">
-            <p>This is scene 4.</p> <!--- Scene 4 Inside the bank - people lying down  -->
-            <button class="optionButton" type="button" onclick="showScene(5)">Assign a crew member to crowd control</button>
-            <button class="optionButton" type="button" onclick="showScene(5)">Don't assign a crew member to crowd control</button>
+        <section id="scene4"> <!--- Scene 4 Inside the bank - people lying down  -->
+            <p>This is scene 4.</p>
+            <div class="buttonContainer">
+                <button class="optionButton" type="button" onclick="showScene(5)">Assign a crew member to crowd
+                    control</button>
+                <button class="optionButton" type="button" onclick="showScene(5)">Don't assign a crew member to crowd
+                    control</button>
+            </div>
         </section>
 
-        <section id="scene5">
-            <p>This is scene 5.</p> <!--- Scene 5  Vault -->
-            <button class="optionButton" type="button" onclick="showScene(5)">Blow up the door</button>
-            <button class="optionButton" type="button" onclick="showScene(5)">Use the drill on the door</button>
+        <section id="scene5"> <!--- Scene 5  Vault -->
+            <p>This is scene 5.</p>
+            <div class="buttonContainer">
+                <button class="optionButton" type="button" onclick="showScene(5)">Blow up the door</button>
+                <button class="optionButton" type="button" onclick="showScene(5)">Use the drill on the door</button>
+            </div>
         </section>
 
 
@@ -86,23 +96,22 @@
 
 
 
-
-        <section id = "scene99">
+        <section id="scene99">
             <h1>The Slack Job</h1>
-        <h2>By</h2>
-        <p class = "credits">Taylor Walker - 40363058<br>
-            Thomas Dillon - 40363297<br>
-            Adam Stafford - 40365651<br>
-            Micheal Waite - USELESS<br>
-            Caleb Connor - 40375909
-        </p><br>
-        <h2>Image & Music Credits</h2>
-        <p class = "credits">
-            Menu Song - Riding Into The Sun, By Telecasted
-        </p>
-        <div id ="buttons">
-            <button class = "menuButton" type="button" onclick="showScene(0);">Back To Start Screen</button>
-        </div>
+            <h2>By</h2>
+            <p class="credits">Taylor Walker - 40363058<br>
+                Thomas Dillon - 40363297<br>
+                Adam Stafford - 40365651<br>
+                Micheal Waite - USELESS<br>
+                Caleb Connor - 40375909
+            </p><br>
+            <h2>Image & Music Credits</h2>
+            <p class="credits">
+                Menu Song - Riding Into The Sun, By Telecasted
+            </p>
+            <div id="buttons">
+                <button class="menuButton" type="button" onclick="showScene(0);">Back To Start Screen</button>
+            </div>
         </section>
 
     </div>
