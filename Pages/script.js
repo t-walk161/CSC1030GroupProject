@@ -19,7 +19,6 @@ function inputName(){
         document.getElementById("modeSelect").classList.remove("hideMe");
     }
 }
-//This does not work, need to fix
 function setDifficulty(){
     var timeRemaining = 0;
     switch(document.getElementById("difficultySelect").value){
