@@ -34,11 +34,19 @@ h2 {
 }
 
 .optionButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
+        width: 25%;
+        height: 40px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        border: none;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
 }
 
 #buttons {
