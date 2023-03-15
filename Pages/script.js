@@ -105,7 +105,7 @@ function notAssignCrowdControl() {
     document.getElementById("crowdYes").classList.add("hideMe");
     document.getElementById("crowdNo").classList.add("hideMe");
     document.getElementById("crowdContinue").classList.remove("hideMe");
-}
+
     let APIurl = "http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/diceRollWithInputs.php";
     let args = "?diceFaceNumber=3&diceNumber=1";
     fetch(APIurl + args)
@@ -123,3 +123,4 @@ function notAssignCrowdControl() {
         }).catch(function (error) {
             console.log(error.message);
         });
+}
