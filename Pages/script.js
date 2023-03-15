@@ -60,7 +60,7 @@ function showScene(num) {
 }
 function startScene(num){
     switch(num){
-        case 2: break;
+        case 2: scene2();break;
         case 3: scene3(); break;
         case 4: scene4(); break;
         case 5: break;
@@ -72,16 +72,22 @@ function startScene(num){
 
 //Functions to run scenes
 
+//Scene 2 
+function  scene2(){
+    var p1 = document.getElementById("textS2P1")
+    typeText(p1, "Ok its time. Be prepared for anything, this could get intense. Stay alert and stay sharp.")
+}
+
 //Scene 3
 function scene3() {
     var p1 = document.getElementById("textS3P1");
-    typeText(p1 ,"Right, we're inside, it's time to crack on, get out your gun and fire a few shots to scare these people.")
+    typeText(p1 ,"There's no turning back now. Let's get cracking! Take out your gun and fire a few shots to scare these people.")
 }
 
 //Scene 4
 function scene4(){
     var p1 = document.getElementById("textS4P1");
-    typeText(p1 ,"Great that worked better than expected, everyone is on the floor. Do you want to leave someone on crowd control boss, means we can't lift as much from the vault, but also means these civies can't hit the silent alarm.")
+    typeText(p1 ,"Great that worked better than expected, everyone is on the floor. Do you want to leave someone on crowd control boss? It means we can't lift as much from the vault, but it would stop these civies hitting the silent alarm.")
 }
 function assignCrowdControl(){
     var p1 = document.getElementById("textS4P1");
@@ -93,7 +99,8 @@ function assignCrowdControl(){
     document.getElementById("crowdContinue").classList.remove("hideMe");
 }
 function notAssignCrowdControl(){
-    var p1 = document.getElementById("textS4P1");
+    var p2 = document.getElementById("textS4P2");
+    typeText(p2, "Lets get going")
     let APIurl = "http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/diceRollWithInputs.php";
     let args = "?diceFaceNumber=3&diceNumber=1";
     fetch(APIurl+args)
