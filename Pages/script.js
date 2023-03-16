@@ -100,14 +100,9 @@ function assignCrowdControl() {
 }
 function notAssignCrowdControl() {
     var p1 = document.getElementById("textS4P1");
-    typeText(p1, "Alright boss, we won't leave anyone on crowd control. Let's get to the vault!")
-    sessionStorage.setItem("NoOfDecisionsMade", sessionStorage.getItem("NoOfDecisionsMade") + 1);
-    document.getElementById("crowdYes").classList.add("hideMe");
-    document.getElementById("crowdNo").classList.add("hideMe");
-    document.getElementById("crowdContinue").classList.remove("hideMe");
-
     let APIurl = "http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/diceRollWithInputs.php";
     let args = "?diceFaceNumber=3&diceNumber=1";
+    var rollResult
     fetch(APIurl + args)
         .then(function (response) {
             if (!response.ok) {
@@ -116,11 +111,29 @@ function notAssignCrowdControl() {
             return response.json();
         }).then(function (data) {
             if (data.err) {
-                alert(data.result);
+                alert(data.errMsg);
             } else {
-                alert(data.result);
+                rollResult = data["0"]["result"];
+                console.log("Roll returned " + rollResult + " out of 3.");
+                console.log("Int: " + parseInt(rollResult));
+                if(parseInt(rollResult) < 3){
+                    typeText(p1, "You're right boss, we can't afford........ OH NO BOSS! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
+                    sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000);//Changed Penalty to 30 seconds instead of 1 minute, felt to hard for hard mode.
+                    console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
+                }
+                else{
+                    typeText(p1, "You're right boss, we can't afford to leave someone on crowd control. Let's get to work on that vault.");
+                }
+                sessionStorage.setItem("NoOfDecisionsMade", sessionStorage.getItem("NoOfDecisionsMade") + 1);
+                document.getElementById("crowdYes").classList.add("hideMe");
+                document.getElementById("crowdNo").classList.add("hideMe");
+                document.getElementById("crowdContinue").classList.remove("hideMe");
+            
             }
         }).catch(function (error) {
             console.log(error.message);
         });
+
+    
+
 }
