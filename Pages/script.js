@@ -47,7 +47,7 @@ function typeText(element, text) {
         if (charIndex >= text.length) {
             clearInterval(intervalId);
         }
-    }, 15);
+    }, 5);
 }
 function showScene(num) {
     var sections = document.getElementsByTagName("section");
@@ -72,33 +72,35 @@ function startScene(num) {
 
 //Functions to run scenes
 
-//Scene 2 
+//Scene 2
 function scene2() {
     var p1 = document.getElementById("textS2P1")
-    typeText(p1, "Ok its time. Be prepared for anything, this could get intense. Stay alert and stay sharp.")
+    typeText(p1, "Ok it's time. Be prepared for anything, this could get intense. Stay alert and stay sharp.")
 }
 
 //Scene 3
 function scene3() {
     var p1 = document.getElementById("textS3P1");
-    typeText(p1, "There's no turning back now. Let's get cracking! Take out your gun and fire a few shots to scare these people.")
+    typeText(p1, "There's no turning back now. Let's get cracking! Take out your gun and fire a few shots to scare these people.");
+    document.getElementById("startHeist").disabled = false;
 }
-
 //Scene 4
 function scene4() {
     var p1 = document.getElementById("textS4P1");
     typeText(p1, "Great that worked better than expected, everyone is on the floor. Do you want to leave someone on crowd control boss? It means we can't lift as much from the vault, but it would stop these civies hitting the silent alarm.")
 }
 function assignCrowdControl() {
+    document.getElementById("crowdYes").classList.add("hideMe");
+    document.getElementById("crowdNo").classList.add("hideMe");
     var p1 = document.getElementById("textS4P1");
     typeText(p1, "Good call boss, we'll leave someone on crowd control, better safe than sorry. Let's get to work on that vault.")
     sessionStorage.setItem("remainingTeamMembers", sessionStorage.getItem("remainingTeamMembers") - 1);
     sessionStorage.setItem("NoOfDecisionsMade", sessionStorage.getItem("NoOfDecisionsMade") + 1);
-    document.getElementById("crowdYes").classList.add("hideMe");
-    document.getElementById("crowdNo").classList.add("hideMe");
     document.getElementById("crowdContinue").classList.remove("hideMe");
 }
 function notAssignCrowdControl() {
+    document.getElementById("crowdYes").classList.add("hideMe");
+    document.getElementById("crowdNo").classList.add("hideMe");
     var p1 = document.getElementById("textS4P1");
     let APIurl = "http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/diceRollWithInputs.php";
     let args = "?diceFaceNumber=3&diceNumber=1";
@@ -125,8 +127,6 @@ function notAssignCrowdControl() {
                     typeText(p1, "You're right boss, we can't afford to leave someone on crowd control. Let's get to work on that vault.");
                 }
                 sessionStorage.setItem("NoOfDecisionsMade", sessionStorage.getItem("NoOfDecisionsMade") + 1);
-                document.getElementById("crowdYes").classList.add("hideMe");
-                document.getElementById("crowdNo").classList.add("hideMe");
                 document.getElementById("crowdContinue").classList.remove("hideMe");
             }
         }).catch(function (error) {
