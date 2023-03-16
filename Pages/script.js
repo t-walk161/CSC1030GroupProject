@@ -40,15 +40,17 @@ function startGame() {
 //When using the typeText function, the first element inputted should be the id of the element you want to type in, and the second should be the text you want to type.
 function typeText(element, text) {
     let currentIndex = 0;
-
+    
     function updateText() {
-        element.innerHTML = text.substr(0, currentIndex);
-        currentIndex++;
-        if (currentIndex <= text.length) {
-            window.requestAnimationFrame(updateText);
-        }
-    } window.requestAnimationFrame;
-}
+      element.innerHTML = text.substr(0, currentIndex);
+      currentIndex++;
+      if (currentIndex <= text.length) {
+        window.requestAnimationFrame(updateText);
+      }
+    }
+  
+    window.requestAnimationFrame(updateText);
+  }
 
 function showScene(num) {
     var sections = document.getElementsByTagName("section");
