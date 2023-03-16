@@ -47,8 +47,7 @@ function typeText(element, text) {
         if (currentIndex <= text.length) {
             window.requestAnimationFrame(updateText);
         }
-    }
-    window.requestAnimationFrame(updateText);
+    } window.requestAnimationFrame;
 }
 
 function showScene(num) {
