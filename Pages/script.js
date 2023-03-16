@@ -128,12 +128,8 @@ function notAssignCrowdControl() {
                 document.getElementById("crowdYes").classList.add("hideMe");
                 document.getElementById("crowdNo").classList.add("hideMe");
                 document.getElementById("crowdContinue").classList.remove("hideMe");
-            
             }
         }).catch(function (error) {
             console.log(error.message);
         });
-
-    
-
 }
