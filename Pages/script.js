@@ -48,7 +48,6 @@ function typeText(element, text) {
         window.requestAnimationFrame(updateText);
       }
     }
-  
     window.requestAnimationFrame(updateText);
   }
 
