@@ -1,5 +1,6 @@
 //JS#
 const regex = /^\D*$/;
+
 function testAudio() {
     var audio = new AudioFile("../Audio/menuSong.mp3");
     audio.play();
@@ -38,17 +39,18 @@ function startGame() {
 }
 //When using the typeText function, the first element inputted should be the id of the element you want to type in, and the second should be the text you want to type.
 function typeText(element, text) {
-    element.innerHTML = "";
-    var charIndex = 0;
-    var intervalId = setInterval(function () {
-        var nextChar = text.charAt(charIndex);
-        element.innerHTML += nextChar;
-        charIndex++;
-        if (charIndex >= text.length) {
-            clearInterval(intervalId);
-        }
-    }, 5);
-}
+    let currentIndex = 0;
+    
+    function updateText() {
+      element.innerHTML = text.substr(0, currentIndex);
+      currentIndex++;
+      if (currentIndex <= text.length) {
+        window.requestAnimationFrame(updateText);
+      }
+    }
+    window.requestAnimationFrame(updateText);
+  }
+
 function showScene(num) {
     var sections = document.getElementsByTagName("section");
     for (var i = 0; i < sections.length; i++) {
@@ -118,12 +120,12 @@ function notAssignCrowdControl() {
                 rollResult = data["0"]["result"];
                 console.log("Roll returned " + rollResult + " out of 3.");
                 console.log("Int: " + parseInt(rollResult));
-                if(parseInt(rollResult) < 3){
+                if (parseInt(rollResult) < 3) {
                     typeText(p1, "You're right boss, we can't afford........ OH NO BOSS! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
                     sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000);//Changed Penalty to 30 seconds instead of 1 minute, felt to hard for hard mode.
                     console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
                 }
-                else{
+                else {
                     typeText(p1, "You're right boss, we can't afford to leave someone on crowd control. Let's get to work on that vault.");
                 }
                 sessionStorage.setItem("NoOfDecisionsMade", sessionStorage.getItem("NoOfDecisionsMade") + 1);
