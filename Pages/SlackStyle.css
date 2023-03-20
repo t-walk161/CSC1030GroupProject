@@ -35,7 +35,7 @@ h2 {
 
 .buttonContainer {
     text-align: center;
-  }
+}
 
 .optionButton {
     display: inline-block;
@@ -116,7 +116,8 @@ p.credits {
     font-size: 36px;
     font-family: 'Century', sans-serif;
 }
-.gameText{
+
+.gameText {
     font-size: 30px;
     font-family: 'Century Gothic', sans-serif;
     text-align: left;
@@ -131,5 +132,6 @@ p.credits {
     margin:10px;
     padding:5px;
     align-items: left;
- 
+    color: white;
+    text-shadow: 2px 2px 2px black;
 }
