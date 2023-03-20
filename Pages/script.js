@@ -44,9 +44,14 @@ function typeText(element, text) {
     var charIndex = 0;
     var intervalId = setInterval(function () {
         if (stopText) {
-            clearInterval(intervalId);
-            stopText = false;
-            return;
+            if(charIndex == 0){
+                stopText = false;
+            }
+            else{
+                clearInterval(intervalId);
+                stopText = false;
+                return;
+            }
         }
         var nextChar = text.charAt(charIndex);
         element.innerHTML += nextChar;
