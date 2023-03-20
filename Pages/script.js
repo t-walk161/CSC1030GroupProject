@@ -148,3 +148,28 @@ function notAssignCrowdControl() {
             console.log(error.message);
         });
 }
+function hideTimer(){
+    var timer = document.getElementById("timer");
+    timer.style.visibility = "hidden";
+}
+function showTimer(){
+    var timer = document.getElementById("timer");
+    timer.style.visibility = "visible";
+}
+function startTimer() {
+    var timer = document.getElementById("timer");
+    var timeRemaining = sessionStorage.getItem("timeRemaining");
+    var minutes = Math.floor(timeRemaining / 60000);
+    var seconds = ((timeRemaining % 60000) / 1000).toFixed(0);
+    timer.innerHTML = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    timeRemaining = timeRemaining - 1000;
+    sessionStorage.setItem("timeRemaining", timeRemaining);
+    if (timeRemaining == 0) {
+        showScene(5);
+        hideTimer();
+    }
+    else {
+        setTimeout(startTimer, 1000);
+    }
+}
+
