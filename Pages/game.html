@@ -28,7 +28,9 @@
 <body>
     <audio id="menuMusic" src="../Audio/menuSong.mp3" autoplay loop></audio>
     <div id="backgroundImg" class="bgImgBox">
-        <button id = "test" type = "button" onclick="showScene(4);">TestMode</button>
+        <div id = "timer" >
+            <p>Time Remaining: </p>
+        </div>
         <section id="scene0">
             <div id="header">
                 <h1>THE SLACK JOB</h1>
@@ -61,7 +63,7 @@
 
         <section id="scene2"> <!--- Scene 2 Outside the bank -->
             <p>This is scene 2.</p>
-            <p id ="textS2P1" class = "gameText" style = "color: black;"></p>
+            <p id ="textS2P1" class = "gameText"></p>
             <div class="buttonContainer">
                 <button class="optionButton" type="button" onclick="showScene(3)">Enter the bank</button>
                 <button class="optionButton" type="button" onclick="showScene(1)">Back</button>
@@ -70,7 +72,7 @@
 
         <section id="scene3"> <!--- Scene 3 Inside the bank -->
             <p>This is scene 3.</p>
-            <p id ="textS3P1" class = "gameText" style = "color: black;">
+            <p id ="textS3P1" class = "gameText">
                p1
             </p>
             <div class="buttonContainer">
@@ -80,7 +82,7 @@
 
         <section id="scene4"> <!--- Scene 4 Inside the bank - people lying down  -->
             <p>This is scene 4.</p>
-            <p id ="textS4P1" class = "gameText" style = "color: black;">
+            <p id ="textS4P1" class = "gameText">
                 p1
              </p>
             <div class="buttonContainer">
