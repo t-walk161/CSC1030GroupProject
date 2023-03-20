@@ -38,35 +38,23 @@ function startGame() {
     document.getElementById("menuMusic").pause();
 }
 //When using the typeText function, the first element inputted should be the id of the element you want to type in, and the second should be the text you want to type.
-let stopLast = false;
-let activeElement = null;
-let activeText = null;
-
+let stopText = false;
 function typeText(element, text) {
-  let currentIndex = 0;
-  // Check if this is the currently active element and text
-  if (element === activeElement && text === activeText) {
-    // If so, reset the stopLast flag
-    stopLast = false;
-  } else {
-    // Otherwise, set the active element and text
-    activeElement = element;
-    activeText = text;
-  }
-  function updateText() {
-    element.innerHTML = text.substr(0, currentIndex);
-    currentIndex++;
-    // Check if stopLast is true, or if this is no longer the active element and text
-    if (stopLast || element !== activeElement || text !== activeText) {
-      stopLast = false;
-      activeElement = null;
-      activeText = null;
-      return;
-    } else if (currentIndex <= text.length) {
-      window.requestAnimationFrame(updateText);
-    }
-  }
-  window.requestAnimationFrame(updateText);
+    element.innerHTML = "";
+    var charIndex = 0;
+    var intervalId = setInterval(function () {
+        if (stopText) {
+            clearInterval(intervalId);
+            stopText = false;
+            return;
+        }
+        var nextChar = text.charAt(charIndex);
+        element.innerHTML += nextChar;
+        charIndex++;
+        if (charIndex >= text.length) {
+            clearInterval(intervalId);
+        }
+    }, 5);
 }
 
 function showScene(num) {
@@ -110,7 +98,7 @@ function scene4() {
     typeText(p1, "Great that worked better than expected, everyone is on the floor. Do you want to leave someone on crowd control boss? It means we can't lift as much from the vault, but it would stop these civies hitting the silent alarm.")
 }
 function assignCrowdControl() {
-    stopLast = true;
+    stopText = true;
     document.getElementById("crowdYes").classList.add("hideMe");
     document.getElementById("crowdNo").classList.add("hideMe");
     var p1 = document.getElementById("textS4P1");
@@ -120,7 +108,7 @@ function assignCrowdControl() {
     document.getElementById("crowdContinue").classList.remove("hideMe");
 }
 function notAssignCrowdControl() {
-    stopLast = true;
+    stopText = true;
     document.getElementById("crowdYes").classList.add("hideMe");
     document.getElementById("crowdNo").classList.add("hideMe");
     var p1 = document.getElementById("textS4P1");
