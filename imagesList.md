@@ -1,10 +1,11 @@
 Maybe an image for the home screen? Group of characters / bank / vault 
 Outside The Bank < Done Photo by Ferran Fusalba Roselló on Unsplash
-Bank Lobby
-Outside Bank Vault
+Bank Lobby < Done
+Outside Bank Vault < Done
 Inside Bank Vault
 Security Gate
-Smoke Effect
+Sticky Notes
+Smoke Effect < Done
 Bomb
 Drill
 Cash Bags
