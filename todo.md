@@ -1,4 +1,4 @@
-Finish Timer < Taylor
+Finish Timer < Taylor < DONE
 
 SCENE 5
 Images of drill & Bomb < Caleb
