@@ -36,6 +36,7 @@ function setDifficulty() {
 }
 function startGame() {
     document.getElementById("menuMusic").pause();
+    startTimer();
 }
 //When using the typeText function, the first element inputted should be the id of the element you want to type in, and the second should be the text you want to type.
 let stopText = false;
@@ -156,20 +157,27 @@ function showTimer(){
     var timer = document.getElementById("timer");
     timer.style.visibility = "visible";
 }
+let timerStop = false;
 function startTimer() {
+    showTimer();
     var timer = document.getElementById("timer");
     var timeRemaining = sessionStorage.getItem("timeRemaining");
     var minutes = Math.floor(timeRemaining / 60000);
     var seconds = ((timeRemaining % 60000) / 1000).toFixed(0);
-    timer.innerHTML = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    timer.innerHTML = 'Time Remaining: ' + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     timeRemaining = timeRemaining - 1000;
     sessionStorage.setItem("timeRemaining", timeRemaining);
+    if(timerStop == true){
+        return;
+    }else
     if (timeRemaining == 0) {
-        showScene(5);
-        hideTimer();
+        //TIMER IS UP
     }
     else {
         setTimeout(startTimer, 1000);
     }
+}
+function stopTimer(){
+    timerStop = true;
 }
 
