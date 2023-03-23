@@ -28,6 +28,7 @@
 <body>
     <audio id="menuMusic" src="../Audio/menuSong.mp3" autoplay loop></audio>
     <div id="backgroundImg" class="bgImgBox">
+        <button onclick = "showScene(9)">Skip to End</button>
         <div id = "timerBox" >
             <p id = "timer">Time Remaining:</p>
         </div>
@@ -100,6 +101,11 @@
                 <button class="optionButton" type="button" onclick="showScene(5)">Blow up the door</button>
                 <button class="optionButton" type="button" onclick="showScene(5)">Use the drill on the door</button>
             </div>
+        </section>
+        <section id = "scene9"> <!--Ending Screen Success-->
+            <h1>Misson Accomplished</h1>
+            <p id = 'textS9P1' class = "gameText" style = "text-align: center;">Scene 9</p>
+            <button id = "backToMenu" class = "meunButton" type = "button">Back to Main Menu</button>
         </section>
 
 

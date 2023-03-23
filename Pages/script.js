@@ -16,6 +16,7 @@ function inputName() {
         sessionStorage.setItem("clicksMade", 0);
         sessionStorage.setItem("NoOfDecisionsMade", 0);
         sessionStorage.setItem("remainingTeamMembers", 4);
+        sessionStorage.setItem("finalTake", 0);
 
         console.log("Name Successfully Set To " + sessionStorage.getItem("userName"));
         document.getElementById("enterName").classList.add("hideMe");
@@ -80,6 +81,9 @@ function startScene(num) {
         case 5: break;
         case 6: break;
         case 7: break;
+        case 8: break;
+        case 9: scene9(); break;
+        case 10: break;
         default: console.log("WARNING: Selected Scene does not have any function");
     }
 }
@@ -105,7 +109,7 @@ function scene4() {
 }
 function assignCrowdControl() {
     stopText = true;
-    document.getElementById("crowdYes").classList.add("hideMe");
+    document.getElementById("crowdYes").classList.add("hideMe")
     document.getElementById("crowdNo").classList.add("hideMe");
     var p1 = document.getElementById("textS4P1");
     typeText(p1, "Good call boss, we'll leave someone on crowd control, better safe than sorry. Let's get to work on that vault.")
@@ -148,6 +152,11 @@ function notAssignCrowdControl() {
         }).catch(function (error) {
             console.log(error.message);
         });
+}
+function scene9(){
+    var p1 = document.getElementById("textS9P1");
+    typeText(p1, "Good Job " + sessionStorage.getItem("userName") +", you completed the job with just " + (sessionStorage.getItem("timeRemaining")/1000) + " seconds left, gathering a total of $" + sessionStorage.getItem("finalTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
+
 }
 function hideTimer(){
     var timer = document.getElementById("timer");
