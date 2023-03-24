@@ -28,9 +28,9 @@
 <body>
     <audio id="menuMusic" src="../Audio/menuSong.mp3" autoplay loop></audio>
     <div id="backgroundImg" class="bgImgBox">
-        <button onclick = "showScene(9)">Skip to End</button>
-        <div id = "timerBox" >
-            <p id = "timer">Time Remaining:</p>
+        <button onclick="showScene(9)">Skip to End</button>
+        <div id="timerBox">
+            <p id="timer">Time Remaining:</p>
         </div>
         <section id="scene0">
             <div id="header">
@@ -39,6 +39,7 @@
             <div id="buttons">
                 <button class="menuButton" type="button" onclick="showScene(1);">Start Game</button>
                 <button class="menuButton" type="button" onclick="showScene(99);">Credits</button>
+                <button class="menuButton" type="button" onclick="showScene(98);">Options</button>
             </div>
         </section>
         <section id="scene1">
@@ -64,7 +65,7 @@
 
         <section id="scene2"> <!--- Scene 2 Outside the bank -->
             <p>This is scene 2.</p>
-            <p id ="textS2P1" class = "gameText"></p>
+            <p id="textS2P1" class="gameText"></p>
             <div class="buttonContainer">
                 <button class="optionButton" type="button" onclick="showScene(3)">Enter the bank</button>
                 <button class="optionButton" type="button" onclick="showScene(1)">Back</button>
@@ -73,25 +74,29 @@
 
         <section id="scene3"> <!--- Scene 3 Inside the bank -->
             <p>This is scene 3.</p>
-            <p id ="textS3P1" class = "gameText">
-               p1
+            <p id="textS3P1" class="gameText">
+                p1
             </p>
             <div class="buttonContainer">
-                <button  id="startHeist" class="optionButton" type="button" onclick="showScene(4)">Start the heist</button>
+                <button id="startHeist" class="optionButton" type="button" onclick="showScene(4)">Start the
+                    heist</button>
             </div>
         </section>
 
         <section id="scene4"> <!--- Scene 4 Inside the bank - people lying down  -->
             <p>This is scene 4.</p>
-            <p id ="textS4P1" class = "gameText">
+            <p id="textS4P1" class="gameText">
                 p1
-             </p>
+            </p>
             <div class="buttonContainer">
-                <button id = "crowdYes" class="optionButton" type="button" onclick="assignCrowdControl();">Assign a crew member to crowd
+                <button id="crowdYes" class="optionButton" type="button" onclick="assignCrowdControl();">Assign a crew
+                    member to crowd
                     control</button>
-                <button id = "crowdNo" class="optionButton" type="button" onclick="notAssignCrowdControl();">Don't assign a crew member to crowd
+                <button id="crowdNo" class="optionButton" type="button" onclick="notAssignCrowdControl();">Don't assign
+                    a crew member to crowd
                     control</button>
-                <button id = "crowdContinue" class ="optionButton hideMe" type="button" onclick="showScene(5)">Head to the vault</button>
+                <button id="crowdContinue" class="optionButton hideMe" type="button" onclick="showScene(5)">Head to the
+                    vault</button>
             </div>
         </section>
 
@@ -102,16 +107,28 @@
                 <button class="optionButton" type="button" onclick="showScene(5)">Use the drill on the door</button>
             </div>
         </section>
-        <section id = "scene9"> <!--Ending Screen Success-->
+        <section id="scene9"> <!--Ending Screen Success-->
             <h1>Misson Accomplished</h1>
-            <p id = 'textS9P1' class = "gameText" style = "text-align: center;">Scene 9</p>
-            <button id = "backToMenu" class = "meunButton" type = "button">Back to Main Menu</button>
+            <p id='textS9P1' class="gameText" style="text-align: center;">Scene 9</p>
+            <button id="backToMenu" class="meunButton" type="button">Back to Main Menu</button>
         </section>
 
-
-
-
-
+        <section id="scene98"> <!--- Options -->
+            <h1>Options</h1>
+            
+            <h3>Change text size</h3>
+            <button onclick="changeTextSize(1);">Smaller Text Size</button>
+            <button onclick="changeTextSize(-1);">Normal Text Size</button>
+            <button onlick="changeTextSize(0);">Larger Text Size</button>
+            
+            <h3>Turn off music</h3>
+            <button onclick="stopAudio();">Turn Off Music</button>
+            <button onclick="testAudio();">Turn On Music</button>
+            
+            <div id="returnButtons">
+                <button class="menuButton" type="button" onclick="showScene(0);">Back To Start Screen</button>
+            </div>
+        </section>
 
         <section id="scene99"> <!--- Credits -->
             <h1>The Slack Job</h1>

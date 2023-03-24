@@ -1,10 +1,19 @@
 //JS#
 const regex = /^\D*$/;
 
+// audio 
+var audio = new Audio("../Audio/menuSong.mp3");
+
 function testAudio() {
-    var audio = new AudioFile("../Audio/menuSong.mp3");
+    // play the audio
     audio.play();
 }
+
+function stopAudio() {
+    // pause the audio
+    audio.pause();
+}
+
 //The input name function also initiates the sessionStorage for other tracked variables.
 function inputName() {
     var name = document.getElementById("enterNameBox").value;
