@@ -1,6 +1,7 @@
 //JS#
 const regex = /^\D*$/;
 
+// Options Menu
 // audio 
 var audio = new Audio("../Audio/menuSong.mp3");
 
@@ -13,6 +14,19 @@ function stopAudio() {
     // pause the audio
     audio.pause();
 }
+
+function setVolume() {
+    // volume slider
+    audio.volume = document.getElementById("volume-slider").value;
+  }  
+
+function changeTextSize(sizeMultiplier) {
+    //text size (WIP)
+    var textSize = parseInt(window.getComputedStyle(document.getElementById("my-text")).fontSize);
+    var newSize = textSize * sizeMultiplier;
+    document.getElementById("my-text").style.fontSize = newSize + "px";
+}
+  
 
 //The input name function also initiates the sessionStorage for other tracked variables.
 function inputName() {

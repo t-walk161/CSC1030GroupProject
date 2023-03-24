@@ -115,16 +115,20 @@
 
         <section id="scene98"> <!--- Options -->
             <h1>Options</h1>
-            
-            <h3>Change text size</h3>
-            <button onclick="changeTextSize(1);">Smaller Text Size</button>
-            <button onclick="changeTextSize(-1);">Normal Text Size</button>
-            <button onlick="changeTextSize(0);">Larger Text Size</button>
-            
-            <h3>Turn off music</h3>
-            <button onclick="stopAudio();">Turn Off Music</button>
-            <button onclick="testAudio();">Turn On Music</button>
-            
+            <div class="buttonContainer">
+                <h3>Change text size</h3> <!--(WIP)-->
+                <button onclick="changeTextSize(0.5)">Small Text Size</button>
+                <button onclick="changeTextSize(1)">Normal Text Size</button>
+                <button onclick="changeTextSize(2)">Large Text Size</button>
+
+                <h3>Audio</h3>
+                <button onclick="stopAudio();">Turn Off Music</button>
+                <button onclick="testAudio();">Turn On Music</button> <br>
+                <label for="volume-slider">Volume:</label>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" onchange="setVolume()">
+
+            </div>
+
             <div id="returnButtons">
                 <button class="menuButton" type="button" onclick="showScene(0);">Back To Start Screen</button>
             </div>
@@ -143,7 +147,7 @@
             <p class="credits">
                 Menu Song - Riding Into The Sun, By Telecasted
             </p>
-            <div class = "buttons">
+            <div class="buttons">
                 <button class="menuButton" type="button" onclick="showScene(0);">Back To Start Screen</button>
             </div>
         </section>

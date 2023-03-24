@@ -120,6 +120,12 @@ p.credits {
     font-family: 'Century', sans-serif;
 }
 
+p.options{
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Century', sans-serif;
+}
+
 .gameText {
     font-size: 30px;
     font-family: 'Century Gothic', sans-serif;
