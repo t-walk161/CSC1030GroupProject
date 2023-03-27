@@ -20,8 +20,8 @@ function setVolume() {
     audio.volume = document.getElementById("volume-slider").value;
   }  
 
+  //text size (WIP)
 function changeTextSize(sizeMultiplier) {
-    //text size (WIP)
     var textSize = parseInt(window.getComputedStyle(document.getElementById("my-text")).fontSize);
     var newSize = textSize * sizeMultiplier;
     document.getElementById("my-text").style.fontSize = newSize + "px";
