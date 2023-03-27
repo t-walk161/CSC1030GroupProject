@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drag and Drop Example</title>
+  <style>
+    #drag {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      cursor: move;
+    }
+    #drop {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+  </style>
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script>
+</head>
+<body>
+  <div id="drag" draggable="true" ondragstart="drag(event)"></div>
+  <div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</body>
+</html>

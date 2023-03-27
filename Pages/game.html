@@ -28,6 +28,7 @@
 <body>
     <div id="backgroundImg" class="bgImgBox">
         <button onclick="showScene(9)">Skip to End</button>
+        <button onclick="showScene(10)">Skip to failure</button>
         <div id="timerBox">
             <p id="timer">Time Remaining:</p>
         </div>
@@ -109,6 +110,12 @@
         <section id="scene9"> <!--Ending Screen Success-->
             <h1>Misson Accomplished</h1>
             <p id="textS9P1" class="gameText" style="text-align: center;">Scene 9</p>
+            <button id="backToMenu" class="meunButton" type="button" onclick="showScene(0);">Back to Main Menu</button>
+        </section>
+
+        <section id="scene10"> <!--Ending Screen Success-->
+            <h1>Misson Failed</h1>
+            <p id="textS10P1" class="gameText" style="text-align: center;">Scene 10</p>
             <button id="backToMenu" class="meunButton" type="button" onclick="showScene(0);">Back to Main Menu</button>
         </section>
 
