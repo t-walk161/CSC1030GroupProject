@@ -208,6 +208,7 @@ function startTimer() {
     }else
     if (timeRemaining == 0) {
         //TIMER IS UP
+        showScene(10);
     }
     else {
         setTimeout(startTimer, 1000);
