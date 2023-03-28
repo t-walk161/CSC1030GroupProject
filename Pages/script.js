@@ -209,10 +209,12 @@ function startTimer() {
     if (timerStop == true) {
         return;
     } else
-        if (timeRemaining == 0) {
+        if (timeRemaining <= 0) {
             //TIMER IS UP
+            timer.style.visibility = "hidden";
             showScene(10);
-            // timer.style.visibility = "hidden";
+            stopTimer();
+            
         }
         else {
             setTimeout(startTimer, 1000);
