@@ -21,3 +21,4 @@ Example of this code is week 9 practical. Var difficulty.
 
 NOTES FOR MIKE
 sessionStorage.getItem('userName') //Returns the name set by the user
+accessibility features - is the options menu (text size)

@@ -122,21 +122,22 @@
         <section id="scene98"> <!--- Options -->
             <h1>Options</h1>
             <div class="buttonContainer">
-                <h3>Change text size</h3> <!--(WIP)-->
-                <button onclick="changeFontSize(20)">Small</button>
-                <button onclick="changeFontSize(30)">Medium</button>
-                <button onclick="changeFontSize(40)">Large</button>
-                <p class ="gameText">Test text</p>
+                <h3>Change text size</h3>
+                <button class="settingButton" onclick="changeFontSize(20)">Small</button>
+                <button class="settingButton" onclick="changeFontSize(30)">Medium</button>
+                <button class="settingButton" onclick="changeFontSize(40)">Large</button>
+                <p class="gameText" style="text-align: center;">Test text</p>
 
                 <h3>Audio</h3>
-                <button onclick="stopAudio();">Turn Off Music</button>
-                <button onclick="testAudio();">Turn On Music</button> <br>
+                <button class="settingButton" onclick="stopAudio();">Turn Off Music</button>
+                <button class="settingButton" onclick="testAudio();">Turn On Music</button> <br>
                 <label for="volume-slider">Volume:</label>
                 <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" onchange="setVolume()">
+                <br><br>
 
             </div>
 
-            <div id="returnButtons">
+            <div id="returnButtons" style="text-align: center;">
                 <button class="menuButton" type="button" onclick="showScene(0);">Back To Start Screen</button>
             </div>
         </section>

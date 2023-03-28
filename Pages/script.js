@@ -20,7 +20,7 @@ function setVolume() {
     audio.volume = document.getElementById("volume-slider").value;
 }
 
-//text size (WIP)
+//change text size
 function changeFontSize(size) {
 var items=document.querySelectorAll(".gameText");
 for (var i = 0; i < items.length; i++) {
@@ -175,10 +175,14 @@ function notAssignCrowdControl() {
             console.log(error.message);
         });
 }
+
+//success screen
 function scene9() {
     var p1 = document.getElementById("textS9P1");
     typeText(p1, "Good Job " + sessionStorage.getItem("userName") + ", you completed the job with just " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + sessionStorage.getItem("finalTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
 }
+
+//failed screen 
 function scene10() {
     var p1 = document.getElementById("textS10P1");
     typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job with  " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + sessionStorage.getItem("finalTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
