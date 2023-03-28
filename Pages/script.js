@@ -20,7 +20,7 @@ function setVolume() {
     audio.volume = document.getElementById("volume-slider").value;
 }
 
-//text size (WIP)
+//change text size
 function changeFontSize(size) {
 var items=document.querySelectorAll(".gameText");
 for (var i = 0; i < items.length; i++) {
