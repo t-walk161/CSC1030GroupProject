@@ -116,26 +116,26 @@ function startScene(num) {
 //Scene 2
 function scene2() {
     var p1 = document.getElementById("textS2P1")
-    typeText(p1, "Ok it's time. Be prepared for anything, this could get intense. Stay alert and stay sharp.")
+    typeText(p1, "Ok it's time. Be prepared for anything " + sessionStorage.getItem('userName') + ", this could get intense. Stay alert and stay sharp.")
 }
 
 //Scene 3
 function scene3() {
     var p1 = document.getElementById("textS3P1");
-    typeText(p1, "There's no turning back now. Let's get cracking! Take out your gun and fire a few shots to scare these people.");
+    typeText(p1, "There's no turning back now " + sessionStorage.getItem('userName') + "! Let's get cracking! Take out your gun and fire a few shots to scare these people.");
     document.getElementById("startHeist").disabled = false;
 }
 //Scene 4
 function scene4() {
     var p1 = document.getElementById("textS4P1");
-    typeText(p1, "Great that worked better than expected, everyone is on the floor. Do you want to leave someone on crowd control boss? It means we can't lift as much from the vault, but it would stop these civies hitting the silent alarm.")
+    typeText(p1, "Great that worked better than expected, everyone is on the floor. Do you want to leave someone on crowd control " + sessionStorage.getItem('userName')+ "? It means we can't lift as much from the vault, but it would stop these civies hitting the silent alarm.")
 }
 function assignCrowdControl() {
     stopText = true;
     document.getElementById("crowdYes").classList.add("hideMe")
     document.getElementById("crowdNo").classList.add("hideMe");
     var p1 = document.getElementById("textS4P1");
-    typeText(p1, "Good call boss, we'll leave someone on crowd control, better safe than sorry. Let's get to work on that vault.")
+    typeText(p1, "Good call " + sessionStorage.getItem('userName') + " , we'll leave someone on crowd control, better safe than sorry. Let's get to work on that vault.")
     sessionStorage.setItem("remainingTeamMembers", sessionStorage.getItem("remainingTeamMembers") - 1);
     sessionStorage.setItem("NoOfDecisionsMade", sessionStorage.getItem("NoOfDecisionsMade") + 1);
     document.getElementById("crowdContinue").classList.remove("hideMe");
@@ -162,12 +162,12 @@ function notAssignCrowdControl() {
                 console.log("Roll returned " + rollResult + " out of 3.");
                 console.log("Int: " + parseInt(rollResult));
                 if (parseInt(rollResult) < 3) {
-                    typeText(p1, "You're right boss, we can't afford........ OH NO BOSS! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
+                    typeText(p1, "You're right" + sessionStorage.getItem('userName') + " , we can't afford........ OH NO "+sessionStorage.getItem('userName').toUpperCase+"! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
                     sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000);//Changed Penalty to 30 seconds instead of 1 minute, felt to hard for hard mode.
                     console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
                 }
                 else {
-                    typeText(p1, "You're right boss, we can't afford to leave someone on crowd control. Let's get to work on that vault.");
+                    typeText(p1, "You're right" + sessionStorage.getItem('userName') + " , we can't afford to leave someone on crowd control. Let's get to work on that vault.");
                 }
                 sessionStorage.setItem("NoOfDecisionsMade", sessionStorage.getItem("NoOfDecisionsMade") + 1);
                 document.getElementById("crowdContinue").classList.remove("hideMe");

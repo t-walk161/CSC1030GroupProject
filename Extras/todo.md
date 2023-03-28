@@ -30,7 +30,7 @@ Text Colour
 
 OTHER
 Documentation < Thomas & Mike
-Personalise More < Mike
+Personalise More < Mike - Done
 Group Video < Mike
 Powerpoint < Mike & Thomas
 Mike Voiceover
