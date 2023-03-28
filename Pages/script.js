@@ -18,15 +18,14 @@ function stopAudio() {
 function setVolume() {
     // volume slider
     audio.volume = document.getElementById("volume-slider").value;
-  }  
-
-  //text size (WIP)
-function changeTextSize(sizeMultiplier) {
-    var textSize = parseInt(window.getComputedStyle(document.getElementById("my-text")).fontSize);
-    var newSize = textSize * sizeMultiplier;
-    document.getElementById("my-text").style.fontSize = newSize + "px";
 }
-  
+
+//text size (WIP)
+function changeFontSize(size) {
+var items=document.querySelectorAll(".gameText");
+for (var i = 0; i < items.length; i++) {
+    items[i].style.fontSize = size + "px";
+}}
 
 //The input name function also initiates the sessionStorage for other tracked variables.
 function inputName() {
@@ -69,10 +68,10 @@ function typeText(element, text) {
     var charIndex = 0;
     var intervalId = setInterval(function () {
         if (stopText) {
-            if(charIndex == 0){
+            if (charIndex == 0) {
                 stopText = false;
             }
-            else{
+            else {
                 clearInterval(intervalId);
                 stopText = false;
                 return;
@@ -106,7 +105,7 @@ function startScene(num) {
         case 7: break;
         case 8: break;
         case 9: scene9(); break;
-        case 10: break;
+        case 10: scene10(); break;
         default: console.log("WARNING: Selected Scene does not have any function");
     }
 }
@@ -176,20 +175,20 @@ function notAssignCrowdControl() {
             console.log(error.message);
         });
 }
-function scene9(){
+function scene9() {
     var p1 = document.getElementById("textS9P1");
-    typeText(p1, "Good Job " + sessionStorage.getItem("userName") +", you completed the job with just " + (sessionStorage.getItem("timeRemaining")/1000) + " seconds left, gathering a total of $" + sessionStorage.getItem("finalTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
+    typeText(p1, "Good Job " + sessionStorage.getItem("userName") + ", you completed the job with just " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + sessionStorage.getItem("finalTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
 }
-function scene10(){
+function scene10() {
     var p1 = document.getElementById("textS10P1");
-    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") +", you failked the job with  " + (sessionStorage.getItem("timeRemaining")/1000) + " seconds left, gathering a total of $" + sessionStorage.getItem("finalTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
+    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job with  " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + sessionStorage.getItem("finalTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
 
 }
-function hideTimer(){
+function hideTimer() {
     var timer = document.getElementById("timer");
     timer.style.visibility = "hidden";
 }
-function showTimer(){
+function showTimer() {
     var timer = document.getElementById("timer");
     timer.style.visibility = "visible";
 }
@@ -203,18 +202,18 @@ function startTimer() {
     timer.innerHTML = 'Time Remaining: ' + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     timeRemaining = timeRemaining - 1000;
     sessionStorage.setItem("timeRemaining", timeRemaining);
-    if(timerStop == true){
+    if (timerStop == true) {
         return;
-    }else
-    if (timeRemaining == 0) {
-        //TIMER IS UP
-        showScene(10);
-    }
-    else {
-        setTimeout(startTimer, 1000);
-    }
+    } else
+        if (timeRemaining == 0) {
+            //TIMER IS UP
+            showScene(10);
+        }
+        else {
+            setTimeout(startTimer, 1000);
+        }
 }
-function stopTimer(){
+function stopTimer() {
     timerStop = true;
 }
 
