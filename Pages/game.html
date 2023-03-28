@@ -107,6 +107,7 @@
                 <button class="optionButton" type="button" onclick="showScene(5)">Use the drill on the door</button>
             </div>
         </section>
+        
         <section id="scene9"> <!--Ending Screen Success-->
             <h1>Misson Accomplished</h1>
             <p id="textS9P1" class="gameText" style="text-align: center;">Scene 9</p>
@@ -122,20 +123,22 @@
         <section id="scene98"> <!--- Options -->
             <h1>Options</h1>
             <div class="buttonContainer">
-                <h3>Change text size</h3> <!--(WIP)-->
-                <button onclick="changeTextSize(0.5)">Small Text Size</button>
-                <button onclick="changeTextSize(1)">Normal Text Size</button>
-                <button onclick="changeTextSize(2)">Large Text Size</button>
+                <h3>Change text size</h3>
+                <button class="settingButton" onclick="changeFontSize(20)">Small</button>
+                <button class="settingButton" onclick="changeFontSize(30)">Medium</button>
+                <button class="settingButton" onclick="changeFontSize(40)">Large</button>
+                <p class="gameText" style="text-align: center;">Test text</p>
 
                 <h3>Audio</h3>
-                <button onclick="stopAudio();">Turn Off Music</button>
-                <button onclick="testAudio();">Turn On Music</button> <br>
+                <button class="settingButton" onclick="stopAudio();">Turn Off Music</button>
+                <button class="settingButton" onclick="testAudio();">Turn On Music</button> <br>
                 <label for="volume-slider">Volume:</label>
-                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1" onchange="setVolume()">
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" onchange="setVolume()">
+                <br><br>
 
             </div>
 
-            <div id="returnButtons">
+            <div id="returnButtons" style="text-align: center;">
                 <button class="menuButton" type="button" onclick="showScene(0);">Back To Start Screen</button>
             </div>
         </section>
