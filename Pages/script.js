@@ -212,6 +212,7 @@ function startTimer() {
         if (timeRemaining == 0) {
             //TIMER IS UP
             showScene(10);
+            // timer.style.visibility = "hidden";
         }
         else {
             setTimeout(startTimer, 1000);
