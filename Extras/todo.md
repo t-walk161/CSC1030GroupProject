@@ -1,12 +1,12 @@
 Finish Timer < Taylor < DONE
 
 SCENE 5
-Images of drill & Bomb < Caleb
+Images of drill & Bomb < Caleb < DONE
 vault door opens < Adam & Taylor
 Implement API coin toss < Taylor
 
 SCENE 6
-Image of security gate and sticky note < Caleb
+Image of security gate and sticky note < Caleb < Done
 Design of keypad < Taylor
 Implement the API Random number generator < Taylor
 Make the Keypad work < Taylor
@@ -22,7 +22,7 @@ Implent API for tripping over < Adam
 SCENE 9
 Ending screen with win/loss showing score < Adam & Taylor
 
-OPTIONS PAGE < Adam
+OPTIONS PAGE < Adam < DONE
 Change text size
 Mabye music volume
 Text Colour
