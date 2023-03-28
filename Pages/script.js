@@ -100,7 +100,7 @@ function startScene(num) {
         case 2: scene2(); break;
         case 3: scene3(); break;
         case 4: scene4(); break;
-        case 5: break;
+        case 5: scene5(); break;
         case 6: break;
         case 7: break;
         case 8: break;
@@ -174,6 +174,20 @@ function notAssignCrowdControl() {
         }).catch(function (error) {
             console.log(error.message);
         });
+}
+function scene5(){
+    stopText = true;
+    var p1 = document.getElementById("textS5P1");
+    typeText(p1, "Right boss, we're at the vault. Time to get to work, do you want to blow up the door, it will be faster but it's dangerous, or we could drill into the vault, but it will take longer. What do you want to do?")
+
+}
+function blowUpDoor() {
+    stopText = true;
+    document.getElementById("scene5StartButtons").style.visibility = "hidden";
+    document.getElementById("scene5BombButtons").style.visibility = "visible";
+    var p1 = document.getElementById("textS5P1");
+    typeText(p1, "All right the bombs all set, ready to set it off?");
+
 }
 
 //success screen

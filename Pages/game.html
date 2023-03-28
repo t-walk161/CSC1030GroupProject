@@ -27,7 +27,7 @@
 
 <body>
     <div id="backgroundImg" class="bgImgBox">
-        <button onclick="showScene(9)">Skip to End</button>
+        <button onclick="showScene(5)">Skip to 5</button>
         <button onclick="showScene(10)">Skip to failure</button>
         <div id="timerBox">
             <p id="timer">Time Remaining:</p>
@@ -101,10 +101,13 @@
         </section>
 
         <section id="scene5"> <!--- Scene 5  Vault -->
-            <p>This is scene 5.</p>
-            <div class="buttonContainer">
-                <button class="optionButton" type="button" onclick="showScene(5)">Blow up the door</button>
+            <p id = "textS5P1" class = "gameText"></p>
+            <div id = "scene5StartButtons" class="buttonContainer">
+                <button class="optionButton" type="button" onclick="blowUpDoor();">Blow up the door</button>
                 <button class="optionButton" type="button" onclick="showScene(5)">Use the drill on the door</button>
+            </div>
+            <div id = "scene5BombButtons" class="buttonContainer" style = "visibility: hidden;">
+                <button class="optionButton" type="button" onclick="showScene(5)">Boom Time!</button>
             </div>
         </section>
         <section id="scene9"> <!--Ending Screen Success-->
