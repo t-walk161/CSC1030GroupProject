@@ -206,17 +206,19 @@ function scene8() {
 }
 function helpCrew() {
     stopText = true; 
+    document.getElementById("scene8Buttons").style.visibility = "hidden";
     var p1 = document.getElementById("textS8P1");
+    typeText(p1, "You help the crew member up, saving his take and continue on your way. ");
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
-    document.getElementById("continue").classList.remove("hideMe");
 }
 function leaveCrew() {
     stopText = true;
+    document.getElementById("scene8Buttons").style.visibility = "hidden";
     var p1 = document.getElementById("textS8P1");
-    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) - 10000);
+    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) - 10000); // need to set the amount of money lost
+    typeText(p1, "You leave the crew member behind and continue on your way. Sacrificing him and his take.");
     sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
-    document.getElementById("continue").classList.remove("hideMe");
 }
 
 //success screen

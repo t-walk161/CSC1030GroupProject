@@ -109,8 +109,14 @@
                 <button class="optionButton" type="button" onclick="showScene(5)">Use the drill on the door</button>
             </div>
             <div id = "scene5BombButtons" class="buttonContainer" style = "visibility: hidden;">
-                <button class="optionButton" type="button" onclick="showScene(5)">Boom Time!</button>
+                <button class="optionButton" type="button" onclick="showScene(6)">Boom Time!</button>
             </div>
+        </section>
+
+        <section id="scene6"> 
+            <p id ="textS5P1" class ="gameText"> </p>
+            <button class="optionButton" type="button" onclick="showScene(7)">Go to scene 7</button>
+                <button class="optionButton" type="button" onclick="showScene(7)">Go to scene 7</button>
         </section>
 
         <section id="scene7"><!--- Scene 7 getting the money -->
@@ -126,12 +132,11 @@
         <section id="scene8"><!--- Scene 8 tripping over -->
             <p>This is scene 8.</p>
             
-            <div class="buttonContainer">
                 <p id="textS8P1" class="gameText" style="text-align: center;">Scene 8</p>
-                <button class="optionButton" type="button" onclick="showScene(9)">Leave the crew member behind</button>
-                <button class="optionButton" type="button" onclick="showScene(9)">Help the crew member</button>
+                <div id = "scene8Buttons" class="buttonContainer">
+                <button class="optionButton" type="button" onclick="leaveCrew();">Leave the crew member behind</button>
+                <button class="optionButton" type="button" onclick="helpCrew();">Help the crew member</button>
             </div>
-
         </section>
 
         <section id="scene9"> <!--Ending Screen Success-->
