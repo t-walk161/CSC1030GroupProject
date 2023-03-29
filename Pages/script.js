@@ -206,14 +206,12 @@ function scene8() {
 }
 function helpCrew() {
     stopText = true; 
-    document.getElementById("scene8Buttons").style.visibility = "hidden";
     var p1 = document.getElementById("textS8P1");
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
     document.getElementById("continue").classList.remove("hideMe");
 }
 function leaveCrew() {
     stopText = true;
-    document.getElementById("scene8Buttons").style.visibility = "hidden";
     var p1 = document.getElementById("textS8P1");
     sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) - 10000);
     sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
