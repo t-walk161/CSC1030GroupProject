@@ -102,8 +102,8 @@ function startScene(num) {
         case 4: scene4(); break;
         case 5: break;
         case 6: break;
-        case 7: break;
-        case 8: break;
+        case 7: scene7(); break;
+        case 8: scene8(); break;
         case 9: scene9(); break;
         case 10: scene10(); break;
         default: console.log("WARNING: Selected Scene does not have any function");
@@ -174,6 +174,25 @@ function notAssignCrowdControl() {
         }).catch(function (error) {
             console.log(error.message);
         });
+}
+
+//scene 7 - getting the money
+function scene7() {
+    var p1 = document.getElementById("textS7P1");
+    typeText(p1, "Ok, we've got the money. Let's get out of here before the police arrive.");
+    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) + 10000);
+    sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
+    document.getElementById("continue").classList.remove("hideMe");
+}
+
+//scene 8 tripping over 
+function scene8() {
+    var p1 = document.getElementById("textS8P1");
+    typeText(p1, "Oh no! A crew member tripped over and dropped the bag of money! ");
+    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) - 1000);
+    sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
+    sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
+    document.getElementById("continue").classList.remove("hideMe");
 }
 
 //success screen

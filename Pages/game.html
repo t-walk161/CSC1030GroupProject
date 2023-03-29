@@ -29,6 +29,8 @@
     <div id="backgroundImg" class="bgImgBox">
         <button onclick="showScene(9)">Skip to End</button>
         <button onclick="showScene(10)">Skip to failure</button>
+        <button onclick="showScene(8)">Skip to scene 8</button>
+        <button onclick="showScene(7)">Scene 7</button>
         <div id="timerBox">
             <p id="timer">Time Remaining:</p>
         </div>
@@ -107,7 +109,28 @@
                 <button class="optionButton" type="button" onclick="showScene(5)">Use the drill on the door</button>
             </div>
         </section>
-        
+
+        <section id="scene7"><!--- Scene 7 getting the money -->
+            <p>This is scene 7.</p>
+            
+            <div class="buttonContainer">
+                <p id="textS8P1" class="gameText" style="text-align: center;">Scene 7</p>
+                <button class="optionButton" type="button" onclick="showScene(8)">Exit the bank</button>
+            </div>
+
+        </section>
+
+        <section id="scene8"><!--- Scene 8 tripping over -->
+            <p>This is scene 8.</p>
+            
+            <div class="buttonContainer">
+                <p id="textS8P1" class="gameText" style="text-align: center;">Scene 8</p>
+                <button class="optionButton" type="button" onclick="showScene(9)">Leave the crew member behind</button>
+                <button class="optionButton" type="button" onclick="showScene(9)">Help the crew member</button>
+            </div>
+
+        </section>
+
         <section id="scene9"> <!--Ending Screen Success-->
             <h1>Misson Accomplished</h1>
             <p id="textS9P1" class="gameText" style="text-align: center;">Scene 9</p>
