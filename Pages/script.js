@@ -22,10 +22,11 @@ function setVolume() {
 
 //change text size
 function changeFontSize(size) {
-var items=document.querySelectorAll(".gameText");
-for (var i = 0; i < items.length; i++) {
-    items[i].style.fontSize = size + "px";
-}}
+    var items = document.querySelectorAll(".gameText");
+    for (var i = 0; i < items.length; i++) {
+        items[i].style.fontSize = size + "px";
+    }
+}
 
 //The input name function also initiates the sessionStorage for other tracked variables.
 function inputName() {
@@ -127,7 +128,7 @@ function scene3() {
 //Scene 4
 function scene4() {
     var p1 = document.getElementById("textS4P1");
-    typeText(p1, "Great that worked better than expected, everyone is on the floor. Do you want to leave someone on crowd control " + sessionStorage.getItem('userName')+ "? It means we can't lift as much from the vault, but it would stop these civies hitting the silent alarm.")
+    typeText(p1, "Great that worked better than expected, everyone is on the floor. Do you want to leave someone on crowd control " + sessionStorage.getItem('userName') + "? It means we can't lift as much from the vault, but it would stop these civies hitting the silent alarm.")
 }
 function assignCrowdControl() {
     stopText = true;
@@ -161,7 +162,7 @@ function notAssignCrowdControl() {
                 console.log("Roll returned " + rollResult + " out of 3.");
                 console.log("Int: " + parseInt(rollResult));
                 if (parseInt(rollResult) < 3) {
-                    typeText(p1, "You're right" + sessionStorage.getItem('userName') + " , we can't afford........ OH NO "+sessionStorage.getItem('userName').toUpperCase+"! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
+                    typeText(p1, "You're right" + sessionStorage.getItem('userName') + " , we can't afford........ OH NO " + sessionStorage.getItem('userName').toUpperCase + "! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
                     sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000);//Changed Penalty to 30 seconds instead of 1 minute, felt to hard for hard mode.
                     console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
                 }
@@ -175,7 +176,7 @@ function notAssignCrowdControl() {
             console.log(error.message);
         });
 }
-function scene5(){
+function scene5() {
     stopText = true;
     var p1 = document.getElementById("textS5P1");
     typeText(p1, "Right boss, we're at the vault. Time to get to work, do you want to blow up the door, it will be faster but it's dangerous, or we could drill into the vault, but it will take longer. What do you want to do?")
@@ -194,7 +195,7 @@ function blowUpDoor() {
 function scene7() {
     var p1 = document.getElementById("textS7P1");
     typeText(p1, "Ok, we've got the money. Let's get out of here before the police arrive.");
-    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) + 10000);
+    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) + 10000); // need to set the amount of money taken
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
     document.getElementById("continue").classList.remove("hideMe");
 }
@@ -202,8 +203,19 @@ function scene7() {
 //scene 8 tripping over 
 function scene8() {
     var p1 = document.getElementById("textS8P1");
-    typeText(p1, "Oh no! A crew member tripped over and dropped the bag of money! ");
-    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) - 1000);
+}
+function helpCrew() {
+    stopText = true; 
+    document.getElementById("scene8Buttons").style.visibility = "hidden";
+    var p1 = document.getElementById("textS8P1");
+    sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
+    document.getElementById("continue").classList.remove("hideMe");
+}
+function leaveCrew() {
+    stopText = true;
+    document.getElementById("scene8Buttons").style.visibility = "hidden";
+    var p1 = document.getElementById("textS8P1");
+    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) - 10000);
     sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
     document.getElementById("continue").classList.remove("hideMe");
@@ -247,7 +259,7 @@ function startTimer() {
             timer.style.visibility = "hidden";
             showScene(10);
             stopTimer();
-            
+
         }
         else {
             setTimeout(startTimer, 1000);
