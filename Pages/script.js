@@ -5,7 +5,8 @@ const regex = /^\D*$/;
 // audio 
 var audio = new Audio("../Audio/menuSong.mp3");
 
-function testAudio() {
+
+function playAudio() {
     // play the audio
     audio.play();
 }
