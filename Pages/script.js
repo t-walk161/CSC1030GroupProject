@@ -163,7 +163,7 @@ function notAssignCrowdControl() { // This function is called when the user sele
                 console.log("Roll returned " + rollResult + " out of 3.");
                 console.log("Int: " + parseInt(rollResult));
                 if (parseInt(rollResult) < 3) {
-                    typeText(p1, "You're right " + sessionStorage.getItem('userName') + " , we can't afford........ OH NO " + sessionStorage.getItem('userName').toUpperCase + "! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
+                    typeText(p1, "You're right " + sessionStorage.getItem('userName') + " , we can't afford........ OH NO " + sessionStorage.getItem('userName').toUpperCase() + "! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
                     sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000);//Changed Penalty to 30 seconds instead of 1 minute, felt to hard for hard mode.
                     console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
                 }
