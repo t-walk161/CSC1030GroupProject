@@ -131,7 +131,7 @@ function scene4() {
     var p1 = document.getElementById("textS4P1");
     typeText(p1, "Great that worked better than expected, everyone is on the floor. Do you want to leave someone on crowd control " + sessionStorage.getItem('userName') + "? It means we can't lift as much from the vault, but it would stop these civies hitting the silent alarm.")
 }
-function assignCrowdControl() {
+function assignCrowdControl() { // This function is called when the user selects to assign someone to crowd control.
     stopText = true;
     document.getElementById("crowdYes").classList.add("hideMe")
     document.getElementById("crowdNo").classList.add("hideMe");
@@ -141,7 +141,7 @@ function assignCrowdControl() {
     sessionStorage.setItem("NoOfDecisionsMade", sessionStorage.getItem("NoOfDecisionsMade") + 1);
     document.getElementById("crowdContinue").classList.remove("hideMe");
 }
-function notAssignCrowdControl() {
+function notAssignCrowdControl() { // This function is called when the user selects not to assign someone to crowd control.
     stopText = true;
     document.getElementById("crowdYes").classList.add("hideMe");
     document.getElementById("crowdNo").classList.add("hideMe");
@@ -163,7 +163,7 @@ function notAssignCrowdControl() {
                 console.log("Roll returned " + rollResult + " out of 3.");
                 console.log("Int: " + parseInt(rollResult));
                 if (parseInt(rollResult) < 3) {
-                    typeText(p1, "You're right" + sessionStorage.getItem('userName') + " , we can't afford........ OH NO " + sessionStorage.getItem('userName').toUpperCase + "! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
+                    typeText(p1, "You're right " + sessionStorage.getItem('userName') + " , we can't afford........ OH NO " + sessionStorage.getItem('userName').toUpperCase + "! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
                     sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000);//Changed Penalty to 30 seconds instead of 1 minute, felt to hard for hard mode.
                     console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
                 }
