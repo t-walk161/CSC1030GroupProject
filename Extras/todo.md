@@ -38,4 +38,3 @@ Mike Voiceover
 
 BUGS
 Music stops playing after starting game - needs session storage?
-Weird text in dialogue after selecting no crowd control
