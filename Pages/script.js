@@ -243,8 +243,8 @@ function scene6(arg) {
     }
     else if (arg == 2) { //BLOWN UP DOOR LOST TEAM
         sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
-        typeText(p1, "Ok, we've blown up the ... OH NO! The door blew up and killed one of the team! There's only " + sessionStorage.getItem("remainingTeamMembers") + " of us left, see if you can get the security gate open fast.");
-}
+        typeText(p1, "Ok, we've blown up the ... OH NO! The door blew up and killed one of the team! There's only " + sessionStorage.getItem("remainingTeamMembers") + " of us left, see if you can get the security gate open fast.");}
+    }
 //scene 7 - getting the money
 function scene7() {
     var p1 = document.getElementById("textS7P1");
@@ -320,4 +320,4 @@ function startTimer() {
 function stopTimer() {
     timerStop = true;
 }
-}
+
