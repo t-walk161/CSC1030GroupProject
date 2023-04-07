@@ -21,7 +21,7 @@ Implent API for tripping over < Adam
 Photo of crew member tripping over < Caleb
 
 SCENE 9
-Ending screen with win/loss showing score < Adam & Taylor
+Ending screen with win/loss showing score < Adam & Taylor < DONE
 
 OPTIONS PAGE < Adam < DONE
 Change text size
@@ -38,4 +38,4 @@ Mike Voiceover
 
 
 BUGS
-Music stops playing after starting game - needs session storage?
+Music stops playing after starting game - needs session storage? < FIXED

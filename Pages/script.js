@@ -60,7 +60,6 @@ function setDifficulty() {
     console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
 }
 function startGame() {
-    stopAudio();
     startTimer();
 }
 //When using the typeText function, the first element inputted should be the id of the element you want to type in, and the second should be the text you want to type.
