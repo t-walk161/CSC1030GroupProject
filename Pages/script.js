@@ -256,12 +256,14 @@ function scene7() {
 //scene 8 tripping over 
 function scene8() {
     var p1 = document.getElementById("textS8P1");
+    typeText(p1, "Oh no! a crew member tripped over and dropped the money. Do you want to help the crew or leave them to it?");
 }
 function helpCrew() {
     stopText = true; 
     var p1 = document.getElementById("textS8P1");
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
     document.getElementById("continue").classList.remove("hideMe");
+    showScene(9);
 }
 function leaveCrew() {
     stopText = true;
@@ -270,6 +272,7 @@ function leaveCrew() {
     sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
     document.getElementById("continue").classList.remove("hideMe");
+    showScene(9);
 }
 
 //success screen
