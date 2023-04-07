@@ -103,7 +103,6 @@ function startScene(num) {
         case 3: scene3(); break;
         case 4: scene4(); break;
         case 5: scene5(); break;
-        case 6: break;
         case 7: scene7(); break;
         case 8: scene8(); break;
         case 9: scene9(); break;
@@ -183,7 +182,14 @@ function scene5() {
     typeText(p1, "Right boss, we're at the vault. Time to get to work, do you want to blow up the door, it will be faster but it's dangerous, or we could drill into the vault, but it will take longer. What do you want to do?")
 
 }
-function blowUpDoor() {
+function drillDoor(){
+    stopText = true;
+    var p1 = document.getElementById("textS5P1");
+    typeText(p1, "Ok, we'll drill into the vault. Let's get to work.");
+    document.getElementById("scene5StartButtons").style.visibility = "hidden";
+    document.getElementById("scene5DrillButtons").style.visibility = "visible";
+}
+function prepBlowUpDoor() {
     stopText = true;
     document.getElementById("scene5StartButtons").style.visibility = "hidden";
     document.getElementById("scene5BombButtons").style.visibility = "visible";
@@ -191,7 +197,54 @@ function blowUpDoor() {
     typeText(p1, "All right the bombs all set, ready to set it off?");
 
 }
-
+function blowUpDoor() {
+    stopText = true;
+    document.getElementById("scene5StartButtons").style.visibility = "hidden";
+    document.getElementById("scene5BombButtons").style.visibility = "hidden";
+    var p1 = document.getElementById("textS5P1");
+    let APIurl = "http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/coinFlip.php";
+    var flipResult
+    fetch(APIurl)
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+            return response.json();
+        }).then(function (data) {
+            if (data.err) {
+                alert(data.errMsg);
+            } else {
+                flipResult = data.coinFlip;
+                console.log("Flip returned " + flipResult);
+                if (flipResult == "Heads") {
+                    showScene(6)
+                    scene6(1)
+                }
+                else {
+                    showScene(6)
+                    scene6(2)
+                }
+                sessionStorage.setItem("NoOfDecisionsMade", sessionStorage.getItem("NoOfDecisionsMade") + 1);
+            }
+        }).catch(function (error) {
+            console.log(error.message);
+        });
+}
+//Scene 6 - Security Gate
+function scene6(arg) {
+    stopText = true;
+    var p1 = document.getElementById("textS6P1");
+    if (arg == 0) { //DRILLED INTO VAULT
+        sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
+        typeText(p1, "Ok, we've drilled into the vault, but that took a while, we lost 30 seconds. Oh crap there's a security gate, see if you can get it open.");
+    }
+    else if (arg == 1) { //BLOWN UP DOOR
+        typeText(p1, "Ok, we've blown up the door. Oh crap there's a security gate, see if you can get it open.");
+    }
+    else if (arg == 2) { //BLOWN UP DOOR LOST TEAM
+        sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
+        typeText(p1, "Ok, we've blown up the ... OH NO! The door blew up and killed one of the team! There's only " + sessionStorage.getItem("remainingTeamMembers") + " of us left, see if you can get the security gate open fast.");
+}
 //scene 7 - getting the money
 function scene7() {
     var p1 = document.getElementById("textS7P1");
@@ -267,4 +320,4 @@ function startTimer() {
 function stopTimer() {
     timerStop = true;
 }
-
+}
