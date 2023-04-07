@@ -1,9 +1,9 @@
 Finish Timer < Taylor < DONE
 
-SCENE 5
+SCENE 5 < NEEDS POLISHING
 Images of drill & Bomb < Caleb < DONE
-vault door opens < Adam & Taylor
-Implement API coin toss < Taylor
+vault door opens < Adam & Taylor < DONE
+Implement API coin toss < Taylor < DONE
 
 SCENE 6
 Image of security gate and sticky note < Caleb < Done
