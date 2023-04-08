@@ -5,7 +5,7 @@ Images of drill & Bomb < Caleb < DONE
 vault door opens < Adam & Taylor < DONE
 Implement API coin toss < Taylor < DONE
 
-SCENE 6
+SCENE 6 < may be scrapped
 Image of security gate and sticky note < Caleb < Done
 Design of keypad < Taylor
 Implement the API Random number generator < Taylor

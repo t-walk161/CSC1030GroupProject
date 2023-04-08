@@ -27,7 +27,7 @@
 
 <body>
     <div id="backgroundImg" class="bgImgBox">
-        <button onclick="showScene(5)">Skip to 5</button>
+        <button onclick="showScene(6); scene6(0)">Skip to 6</button>
         <button onclick="showScene(10)">Skip to failure</button>
         <button onclick="showScene(8)">Skip to scene 8</button>
         <button onclick="showScene(7)">Scene 7</button>
@@ -119,8 +119,9 @@
 
         <section id = "scene6"> <!--- Scene 6 Security Gate -->
             <p id = "textS6P1" class = "gameText"></p>
-
+            <button class = "optionButton" type="button" onclick="showScene(7)">Continue</button>
         </section>
+
         <section id="scene7"><!--- Scene 7 getting the money -->
             <p>This is scene 7.</p>
             <div class="buttonContainer">
