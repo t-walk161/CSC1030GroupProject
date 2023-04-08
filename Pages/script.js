@@ -257,20 +257,19 @@ function scene7() {
 //scene 8 tripping over 
 function scene8() {
     var p1 = document.getElementById("textS8P1");
+    typeText(p1, "Oh no! a crew member tripped over and dropped the money. Do you want to help the crew or leave them to it?");
 }
+
 function helpCrew() {
     stopText = true; 
-    var p1 = document.getElementById("textS8P1");
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
-    document.getElementById("continue").classList.remove("hideMe");
 }
 function leaveCrew() {
     stopText = true;
-    var p1 = document.getElementById("textS8P1");
-    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) - 10000);
+    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) / sessionStorage.getItem("remainingTeamMembers"));
     sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
+    sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
-    document.getElementById("continue").classList.remove("hideMe");
 }
 
 //success screen
