@@ -244,6 +244,7 @@ function scene6(arg) {
         sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
         typeText(p1, "Ok, we've blown up the ... OH NO! The door blew up and killed one of the team! There's only " + sessionStorage.getItem("remainingTeamMembers") + " of us left, see if you can get the security gate open fast.");}
     }
+    
 //scene 7 - getting the money
 function scene7() {
     var p1 = document.getElementById("textS7P1");
