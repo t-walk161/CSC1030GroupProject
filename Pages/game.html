@@ -27,10 +27,11 @@
 
 <body>
     <div id="backgroundImg" class="bgImgBox">
-        <button onclick="showScene(5)">Skip to 5</button>
+        <button onclick="showScene(6); scene6(0)">Skip to 6</button>
         <button onclick="showScene(10)">Skip to failure</button>
         <button onclick="showScene(8)">Skip to scene 8</button>
         <button onclick="showScene(7)">Scene 7</button>
+        <button onclick="showScene(11)">Scene 11</button>
         <div id="timerBox">
             <p id="timer">Time Remaining:</p>
         </div>
@@ -105,25 +106,18 @@
         <section id="scene5"> <!--- Scene 5  Vault -->
             <p id = "textS5P1" class = "gameText"></p>
             <div id = "scene5StartButtons" class="buttonContainer">
-                <button class="optionButton" type="button" onclick="blowUpDoor();">Blow up the door</button>
-                <button class="optionButton" type="button" onclick="showScene(5)">Use the drill on the door</button>
+                <button class="optionButton" type="button" onclick="prepBlowUpDoor();">Blow up the door</button>
+                <button class="optionButton" type="button" onclick="drillDoor();">Use the drill on the door</button>
             </div>
             <div id = "scene5BombButtons" class="buttonContainer" style = "visibility: hidden;">
-                <button class="optionButton" type="button" onclick="showScene(6)">Boom Time!</button>
+                <button class="optionButton" type="button" onclick="showScene(5)">Boom Time!</button>
             </div>
-        </section>
-
-        <section id="scene6"> 
-            <p id ="textS5P1" class ="gameText"> </p>
-            <button class="optionButton" type="button" onclick="showScene(7)">Go to scene 7</button>
-                <button class="optionButton" type="button" onclick="showScene(7)">Go to scene 7</button>
         </section>
 
         <section id="scene7"><!--- Scene 7 getting the money -->
             <p>This is scene 7.</p>
-            
             <div class="buttonContainer">
-                <p id="textS8P1" class="gameText" style="text-align: center;">Scene 7</p>
+                <p id="textS7P1" class="gameText" style="text-align: center;">Scene 7</p>
                 <button class="optionButton" type="button" onclick="showScene(8)">Exit the bank</button>
             </div>
 
@@ -132,21 +126,21 @@
         <section id="scene8"><!--- Scene 8 tripping over -->
             <p>This is scene 8.</p>
             
+            <div class="buttonContainer">
                 <p id="textS8P1" class="gameText" style="text-align: center;">Scene 8</p>
-                <div id = "scene8Buttons" class="buttonContainer">
-                <button class="optionButton" type="button" onclick="leaveCrew();">Leave the crew member behind</button>
-                <button class="optionButton" type="button" onclick="helpCrew();">Help the crew member</button>
+                <button class="optionButton" type="button" onclick="showScene(9)">Leave the crew member behind</button>
+                <button class="optionButton" type="button" onclick="showScene(9)">Help the crew member</button>
             </div>
         </section>
 
         <section id="scene9"> <!--Ending Screen Success-->
-            <h1>Misson Accomplished</h1>
+            <h1>Mission Accomplished</h1>
             <p id="textS9P1" class="gameText" style="text-align: center;">Scene 9</p>
             <button id="backToMenu" class="meunButton" type="button" onclick="showScene(0);">Back to Main Menu</button>
         </section>
 
         <section id="scene10"> <!--Ending Screen Success-->
-            <h1>Misson Failed</h1>
+            <h1>Mission Failed</h1>
             <p id="textS10P1" class="gameText" style="text-align: center;">Scene 10</p>
             <button id="backToMenu" class="meunButton" type="button" onclick="showScene(0);">Back to Main Menu</button>
         </section>
@@ -158,11 +152,11 @@
                 <button class="settingButton" onclick="changeFontSize(20)">Small</button>
                 <button class="settingButton" onclick="changeFontSize(30)">Medium</button>
                 <button class="settingButton" onclick="changeFontSize(40)">Large</button>
-                <p class="gameText" style="text-align: center;">Test text</p>
+                <p class="gameText" style="text-align: center;"><u>Test text</u></p>
 
                 <h3>Audio</h3>
                 <button class="settingButton" onclick="stopAudio();">Turn Off Music</button>
-                <button class="settingButton" onclick="testAudio();">Turn On Music</button> <br>
+                <button class="settingButton" onclick="playAudio();">Turn On Music</button> <br>
                 <label for="volume-slider">Volume:</label>
                 <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" onchange="setVolume()">
                 <br><br>
@@ -196,9 +190,8 @@
                 Sticky Note - Image by OpenClipart-Vectors from Pixabay <br>
                 Bomb - Image by Jan Helebrant from Pixabay <br>
                 Drill - Image by OpenClipart-Vectors from Pixabay <br>
-                Cash Bags - Pending <br>
-                Cash - Image by OpenClipart-Vectors from Pixabay <br>
                 Planning Screen - Image by Reto Scheiwiller from Pixabay <br>
+                Interior Bank Vault - Image by Luke Hayfield from Flickr <br>
             </p>
             <div class="buttons">
                 <button class="menuButton buttons" type="button" onclick="showScene(0);">Back To Start Screen</button>

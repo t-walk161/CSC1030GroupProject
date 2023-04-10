@@ -1,0 +1,41 @@
+Finish Timer < Taylor < DONE
+
+SCENE 5 < NEEDS POLISHING
+Images of drill & Bomb < Caleb < DONE
+vault door opens < Adam & Taylor < DONE
+Implement API coin toss < Taylor < DONE
+
+SCENE 6 < may be scrapped
+Image of security gate and sticky note < Caleb < Done
+Design of keypad < Taylor
+Implement the API Random number generator < Taylor
+Make the Keypad work < Taylor
+
+SCENE 7
+Images of inside vault with cash bags < Caleb
+Implement Drag n drop to bags < Adam
+Exit < Adam
+
+SCENE 8
+Implent API for tripping over < Adam
+Photo of crew member tripping over < Caleb
+
+SCENE 9
+Ending screen with win/loss showing score < Adam & Taylor < DONE
+
+OPTIONS PAGE < Adam < DONE
+Change text size
+Mabye music volume
+Text Colour
+
+
+OTHER
+Documentation < Thomas & Mike
+Personalise More < Mike - Done
+Group Video < Mike
+Powerpoint < Mike & Thomas
+Mike Voiceover
+
+
+BUGS
+Music stops playing after starting game - needs session storage? < FIXED

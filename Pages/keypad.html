@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keypad</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .button {
+        width: 50px;
+        height: 50px;
+        margin: 0 5px;
+        font-size: 24px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #input {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 24px;
+      }
+
+      #clear {
+        background-color: red;
+        color: white;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <button class="button" onclick="addInput('1')">1</button>
+        <button class="button" onclick="addInput('2')">2</button>
+        <button class="button" onclick="addInput('3')">3</button>
+      </div>
+      <div class="row">
+        <button class="button" onclick="addInput('4')">4</button>
+        <button class="button" onclick="addInput('5')">5</button>
+        <button class="button" onclick="addInput('6')">6</button>
+      </div>
+      <div class="row">
+        <button class="button" onclick="addInput('7')">7</button>
+        <button class="button" onclick="addInput('8')">8</button>
+        <button class="button" onclick="addInput('9')">9</button>
+      </div>
+      <div class="row">
+        <button class="button" onclick="addInput('*')">*</button>
+        <button class="button" onclick="addInput('0')">0</button>
+        <button class="button" onclick="addInput('#')">#</button>
+      </div>
+      <button id="clear" onclick="clearInput()">Clear</button>
+      <div id="input"></div>
+    </div>
+    <script>
+      function addInput(num) {
+        var input = document.getElementById("input");
+        input.innerHTML += num;
+      }
+
+      function clearInput() {
+        var input = document.getElementById("input");
+        input.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
