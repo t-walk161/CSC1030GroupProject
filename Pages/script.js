@@ -183,7 +183,7 @@ function scene5() {
     typeText(p1, "Right boss, we're at the vault. Time to get to work, do you want to blow up the door, it will be faster but it's dangerous, or we could drill into the vault, but it will take longer. What do you want to do?")
 
 }
-function drillDoor(){
+function drillDoor() {
     stopText = true;
     var p1 = document.getElementById("textS5P1");
     typeText(p1, "Ok, we'll drill into the vault. Let's get to work.");
@@ -244,8 +244,9 @@ function scene6(arg) {
     }
     else if (arg == 2) { //BLOWN UP DOOR LOST TEAM
         sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
-        typeText(p1, "Ok, we've blown up the ... OH NO! The door blew up and killed one of the team! There's only " + sessionStorage.getItem("remainingTeamMembers") + " of us left, but we need to keep moving");}
+        typeText(p1, "Ok, we've blown up the ... OH NO! The door blew up and killed one of the team! There's only " + sessionStorage.getItem("remainingTeamMembers") + " of us left, but we need to keep moving");
     }
+}
 
 //scene 7 - getting the money
 function scene7() {
@@ -257,11 +258,11 @@ function scene7() {
 //scene 8 tripping over 
 function scene8() {
     var p1 = document.getElementById("textS8P1");
-    if(sessionStorage.getItem("crowdControl") == "true"){
+    if (sessionStorage.getItem("crowdControl") == "true") {
         typeText(p1, "We've grabbed the guy we left on crowd control on the way out and gave him some money to hold, but another crew member tripped over and dropped the money. Do you want to help the crew or leave them to it? We'll lose the their money if we leave them!");
         sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) + 1);
     }
-    else{
+    else {
         typeText(p1, "Oh no! a crew member tripped over and dropped the money. Do you want to help the crew or leave them to it?");
     }
 }
@@ -269,12 +270,11 @@ function scene8() {
 function helpCrew() {
     stopText = true;
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
-    document.getElementById("continue").classList.remove("hideMe");
+    sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
 }
 function leaveCrew() {
     stopText = true;
-    var p1 = document.getElementById("textS8P1");
-    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) - 10000);
+    var takePerPerson = sessionStorage.getItem("finalTake") / sessionStorage.getItem("remainingTeamMembers");
     sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
     sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) - takePerPerson);
     sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
@@ -285,7 +285,7 @@ function leaveCrew() {
 function scene9() {
     var p1 = document.getElementById("textS9P1");
     typeText(p1, "Good Job " + sessionStorage.getItem("userName") + ", you completed the job with just " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + sessionStorage.getItem("finalTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
-    
+
 }
 //failed screen 
 function scene10() {
@@ -328,4 +328,3 @@ function startTimer() {
 function stopTimer() {
     timerStop = true;
 }
-
