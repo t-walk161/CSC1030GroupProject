@@ -270,10 +270,8 @@ function getMoney() {  //scene 7 - Get Money
     } else {
         actualTake += amountToAdd;
         sessionStorage.setItem("actualTake", actualTake);
-        
         maxTake = remainingTeamMembers * 100000;
         amountToAdd = Math.min((remainingTeamMembers * 25000), maxTake - actualTake);
-        
         var p1 = document.getElementById("textS7P1");
         p1.innerHTML = "Ok " + sessionStorage.getItem("userName") + ", you've added $" + amountToAdd.toLocaleString() + " to your take. Total: $" + actualTake.toLocaleString() + " (max: $" + maxTake.toLocaleString() + ")";
     }
@@ -384,4 +382,26 @@ function setRandCode(){
         }).catch(function (error) {
             console.log(error.message);
         });
+}
+var enteredCode = "";
+function addDigit(num){
+ if (enteredCode.length >= 4){
+    enteredCode = "";
+ }
+    enteredCode += num;
+}
+function clearCode(){
+    enteredCode = "";
+}
+function checkCode(){
+    correctCode = sessionStorage.getItem("secretCode");
+    if (enteredCode == correctCode){
+        stopText = true;
+        var p1 = document.getElementById("textS6P1");
+        typeText(p1, "Sweet, that worked, we're in");
+        document.getElementById("keypad").style.visibility = "hidden";
+        document.getElementById("showStickyNoteButton").style.visibility = "hidden";
+        document.getElementById("codeContinue").classList.remove("hideMe");
+    }
+
 }

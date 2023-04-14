@@ -128,31 +128,34 @@
 
         <section id="scene6"> <!--- Scene 6 Security Gate -->
             <p id="textS6P1" class="gameText"></p>
-            <div class="keypad-container">
+            <div id = "keypad" class="keypad-container">
                 <div class="keypad">
                   <div class="row">
-                    <button class="keypad-button">1</button>
-                    <button class="keypad-button">2</button>
-                    <button class="keypad-button">3</button>
+                    <button class="keypad-button" onclick="addDigit('1')">1</button>
+                    <button class="keypad-button" onclick="addDigit('2')">2</button>
+                    <button class="keypad-button" onclick="addDigit('3')">3</button>
                   </div>
                   <div class="row">
-                    <button class="keypad-button">4</button>
-                    <button class="keypad-button">5</button>
-                    <button class="keypad-button">6</button>
+                    <button class="keypad-button" onclick="addDigit('4')">4</button>
+                    <button class="keypad-button" onclick="addDigit('5')">5</button>
+                    <button class="keypad-button" onclick="addDigit('6')">6</button>
                   </div>
                   <div class="row">
-                    <button class="keypad-button">7</button>
-                    <button class="keypad-button">8</button>
-                    <button class="keypad-button">9</button>
+                    <button class="keypad-button" onclick="addDigit('7')">7</button>
+                    <button class="keypad-button" onclick="addDigit('8')">8</button>
+                    <button class="keypad-button" onclick="addDigit('9')">9</button>
                   </div>
                   <div class="row">
-                    <button class="keypad-button">C</button>
-                    <button class="keypad-button">0</button>
-                    <button class="keypad-button">✓</button>
+                    <button class="keypad-button" onclick="clearCode();">C</button>
+                    <button class="keypad-button" onclick="addDigit('0')">0</button>
+                    <button class="keypad-button" onclick="checkCode();">✓</button>
                   </div>
                 </div>
               </div>
-            <button class="optionButton" type="button" onclick="toggleStickyNote();">Show Sticky Note</button>
+            <div class = "buttonContainer">
+                <button id = "showStickyNoteButton" class="optionButton" type="button" onclick="toggleStickyNote();">Show Sticky Note</button>
+                <button id = "codeContinue" class ="optionButton hideMe" type = "button" onclick = "showScene(7);">Continue"</button>
+            </div>
         </section>
 
         <section id="scene7"><!--- Scene 7 getting the money -->
