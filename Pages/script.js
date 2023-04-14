@@ -61,6 +61,8 @@ function setDifficulty() {
 }
 function startGame() {
     startTimer();
+    setRandCode();
+    toggleStickyNote();
 }
 //When using the typeText function, the first element inputted should be the id of the element you want to type in, and the second should be the text you want to type.
 let stopText = false;
@@ -135,10 +137,11 @@ function assignCrowdControl() { // This function is called when the user selects
     document.getElementById("crowdYes").classList.add("hideMe")
     document.getElementById("crowdNo").classList.add("hideMe");
     var p1 = document.getElementById("textS4P1");
-    typeText(p1, "Good call " + sessionStorage.getItem('userName') + " , we'll leave someone on crowd control, better safe than sorry. Let's get to work on that vault.")
+    typeText(p1, "Good call " + sessionStorage.getItem('userName') + " , we'll leave someone on crowd control, better safe than sorry and the teller has given us a note. Let's get to work on that vault.")
     sessionStorage.setItem("remainingTeamMembers", sessionStorage.getItem("remainingTeamMembers") - 1);
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
     document.getElementById("crowdContinue").classList.remove("hideMe");
+    document.getElementById("showSticky").classList.remove("hideMe");
 }
 function notAssignCrowdControl() { // This function is called when the user selects not to assign someone to crowd control.
     stopText = true;
@@ -163,12 +166,12 @@ function notAssignCrowdControl() { // This function is called when the user sele
                 console.log("Roll returned " + rollResult + " out of 3.");
                 console.log("Int: " + parseInt(rollResult));
                 if (parseInt(rollResult) < 3) {
-                    typeText(p1, "You're right " + sessionStorage.getItem('userName') + " , we can't afford........ OH NO " + sessionStorage.getItem('userName').toUpperCase() + "! The crowd has hit the silent alarm! The police are gonna get here even sooner!");
+                    typeText(p1, "You're right " + sessionStorage.getItem('userName') + " , we can't afford........ OH NO " + sessionStorage.getItem('userName').toUpperCase() + "! The crowd has hit the silent alarm! The police are gonna get here even sooner! We also found a note on the floor.");
                     sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000);//Changed Penalty to 30 seconds instead of 1 minute, felt to hard for hard mode.
                     console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
                 }
                 else {
-                    typeText(p1, "You're right" + sessionStorage.getItem('userName') + " , we can't afford to leave someone on crowd control. Let's get to work on that vault.");
+                    typeText(p1, "You're right" + sessionStorage.getItem('userName') + " , we can't afford to leave someone on crowd control. Let's get to work on that vault. What's this, the teller has given us a note.");
                 }
                 sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
                 document.getElementById("crowdContinue").classList.remove("hideMe");
@@ -357,4 +360,36 @@ function startTimer() {
 }
 function stopTimer() {
     timerStop = true;
+}
+function toggleStickyNote(){
+    var note = document.getElementById("stickyContainer");
+    if(note.style.visibility == "hidden"){
+        note.style.visibility = "visible";
+    }
+    else{
+        note.style.visibility = "hidden";
+    }
+}
+function setRandCode(){
+    var noteText = document.getElementById("stickyNoteText")
+    let APIurl = "http://andymcdowell.hosting.hal.davecutting.uk/1030_APIs/randomCode.php";
+    let args = "?length=4";
+    var code
+    fetch(APIurl + args)
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+            return response.json();
+        }).then(function (data) {
+            if (data.err) {
+                alert(data.errMsg);
+            } else {
+                code = data.secretCode;
+                sessionStorage.setItem("secretCode", code);
+                noteText.innerHTML = "Vault Code: " + code;
+            }
+        }).catch(function (error) {
+            console.log(error.message);
+        });
 }
