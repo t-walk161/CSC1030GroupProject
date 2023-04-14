@@ -240,7 +240,7 @@ function scene6(arg) {
         typeText(p1, "Ok, we've drilled into the vault, but that took a while, we lost 30 seconds. Let's pick it up");
     }
     else if (arg == 1) { //BLOWN UP DOOR
-        typeText(p1, "Ok, we've blown up the door, but we're low on time we need to keep moving");
+        typeText(p1, "Ok, we've blown up the door, but we're low on time we need to keep moving!");
     }
     else if (arg == 2) { //BLOWN UP DOOR LOST TEAM
         sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
