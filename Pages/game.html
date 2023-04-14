@@ -26,12 +26,19 @@
 </head>
 
 <body>
+    <div id ="stickyContainer">
+        <img id = "stickyNote" src ="../photos/note-147951.png" alt="sticky note containing code">
+        <div class="note-text" style ="z-index: 10000;"><p class = "gameText" id ="stickyNoteText">Vault Code: </p></div>
+        <button id = "stickyButton" class = "optionButton" style ="z-index: 10000;" onclick="toggleStickyNote();">Close</button>
+    </div>
     <div id="backgroundImg" class="bgImgBox">
+        
         <button onclick="showScene(6); scene6(0)">Skip to 6</button>
         <button onclick="showScene(10)">Skip to failure</button>
         <button onclick="showScene(8)">Skip to scene 8</button>
         <button onclick="showScene(7)">Scene 7</button>
         <button onclick="showScene(11)">Scene 11</button>
+        <button onclick="toggleStickyNote();">Show the mf Note</button>
         <div id="timerBox">
             <p id="timer">Time Remaining:</p>
         </div>
@@ -45,6 +52,7 @@
                 <button class="menuButton" type="button" onclick="showScene(98);">Options</button>
             </div>
         </section>
+        
         <section id="scene1">
             <div id="enterName" class="centerMe showMe">
                 <label for="enterNameBox">Enter your name:</label>
@@ -100,6 +108,7 @@
                     control</button>
                 <button id="crowdContinue" class="optionButton hideMe" type="button" onclick="showScene(5)">Head to the
                     vault</button>
+                <button id="showSticky" class = "optionButton hideMe" type = "button" onclick = "toggleStickyNote();">Show The Sticky Note</button>
             </div>
         </section>
 
@@ -143,7 +152,7 @@
                   </div>
                 </div>
               </div>
-            <button class="optionButton" type="button" onclick="showScene(7)">Continue</button>
+            <button class="optionButton" type="button" onclick="toggleStickyNote();">Show Sticky Note</button>
         </section>
 
         <section id="scene7"><!--- Scene 7 getting the money -->
