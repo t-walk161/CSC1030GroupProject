@@ -237,7 +237,7 @@ function scene6(arg) {
     var p1 = document.getElementById("textS6P1");
     if (arg == 0) { //DRILLED INTO VAULT
         sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
-        typeText(p1, "Ok, we've drilled into the vault, but that took a while, we lost 30 seconds. Let's pick it up");
+        typeText(p1, "Ok, we've drilled into the vault, but that took a while, we lost 30 seconds. Let's pick it up!");
     }
     else if (arg == 1) { //BLOWN UP DOOR
         typeText(p1, "Ok, we've blown up the door, but we're low on time we need to keep moving!");
@@ -248,30 +248,35 @@ function scene6(arg) {
     }
 }
 
-function getMoney() { //Scene 7 - Get Money
+function scene7(){
+    stopText = true;
+    var p1 = document.getElementById("textS7P1");
+    typeText(p1, "Ok, we're in the vault, let's get to work. Start grabbing the money, but let's get out of here as soon as we can.");
+}
+function getMoney() {  //scene 7 - Get Money
     var remainingTeamMembers = parseInt(sessionStorage.getItem("remainingTeamMembers"));
     var actualTake = parseInt(sessionStorage.getItem("actualTake")) || 0;
-    var maxTake = remainingTeamMembers * 100000 - actualTake;
-    var amountToAdd = Math.min(maxTake, 50000);
-    
-    if (amountToAdd <= 0) {
-      // The player has already maxed out their take
-      var p1 = document.getElementById("textS7P1");
-      p1.innerHTML = "You've already maxed out your take. Time to leave!";
-      return;
+    var maxTake = remainingTeamMembers * 100000;
+    var amountToAdd = Math.min((remainingTeamMembers * 25000), maxTake - actualTake);
+
+    if (actualTake >= maxTake) {
+        // The player has already maxed out their take
+        console.log(actualTake);
+        var p1 = document.getElementById("textS7P1");
+        p1.innerHTML = "You've already maxed out your take. Time to leave!";
+    } else {
+        actualTake += amountToAdd;
+        sessionStorage.setItem("actualTake", actualTake);
+        
+        maxTake = remainingTeamMembers * 100000;
+        amountToAdd = Math.min((remainingTeamMembers * 25000), maxTake - actualTake);
+        
+        var p1 = document.getElementById("textS7P1");
+        p1.innerHTML = "Ok " + sessionStorage.getItem("userName") + ", you've added $" + amountToAdd.toLocaleString() + " to your take. Total: $" + actualTake.toLocaleString() + " (max: $" + maxTake.toLocaleString() + ")";
     }
-    
-    actualTake += amountToAdd;
-    sessionStorage.setItem("actualTake", actualTake);
-    
-    maxTake = remainingTeamMembers * 100000 - actualTake;
-    amountToAdd = Math.min(maxTake, 50000);
-    
-    var p1 = document.getElementById("textS7P1");
-    p1.innerHTML = "Ok " + sessionStorage.getItem("userName") + ", you've added $" + amountToAdd.toLocaleString() + " to your take. Total: $" + actualTake.toLocaleString() + " (max: $" + maxTake.toLocaleString() + ")";
-  }
-  
-  
+}
+
+
 //scene 8 tripping over 
 function scene8() {
     var p1 = document.getElementById("textS8P1");
