@@ -39,3 +39,7 @@ Mike Voiceover
 
 BUGS
 Music stops playing after starting game - needs session storage? < FIXED
+
+monday 17th - mike, caleb, thomas - finish powerpoint, photo of crew member tripping over 
+            - taylor, adam - api for tripping over?, keypad if possible.
+            - group video.
