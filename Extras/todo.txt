@@ -16,11 +16,11 @@ Images of inside vault with cash bags < Caleb
 Implement Drag n drop to bags < Adam
 Exit < Adam
 
-SCENE 8
+SCENE 8 < DONE
 Implent API for tripping over < Adam
 Photo of crew member tripping over < Caleb
 
-SCENE 9
+SCENE 9 < DONE
 Ending screen with win/loss showing score < Adam & Taylor < DONE
 
 OPTIONS PAGE < Adam < DONE
