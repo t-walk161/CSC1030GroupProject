@@ -243,7 +243,7 @@ function scene6(arg) {
         typeText(p1, "Ok, we've drilled into the vault, but that took a while, we lost 30 seconds. Let's pick it up");
     }
     else if (arg == 1) { //BLOWN UP DOOR
-        typeText(p1, "Ok, we've blown up the door, but we're low on time we need to keep moving");
+        typeText(p1, "Ok, we've blown up the door, but we're low on time we need to keep moving!");
     }
     else if (arg == 2) { //BLOWN UP DOOR LOST TEAM
         sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
@@ -251,13 +251,30 @@ function scene6(arg) {
     }
 }
 
-//scene 7 - getting the money
-function scene7() {
-    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("remainingTeamMembers") * 100000)); //Sets take to 100k per remaining team member, not including one if there is one on crown control
+function getMoney() { //Scene 7 - Get Money
+    var remainingTeamMembers = parseInt(sessionStorage.getItem("remainingTeamMembers"));
+    var actualTake = parseInt(sessionStorage.getItem("actualTake")) || 0;
+    var maxTake = remainingTeamMembers * 100000 - actualTake;
+    var amountToAdd = Math.min(maxTake, 50000);
+    
+    if (amountToAdd <= 0) {
+      // The player has already maxed out their take
+      var p1 = document.getElementById("textS7P1");
+      p1.innerHTML = "You've already maxed out your take. Time to leave!";
+      return;
+    }
+    
+    actualTake += amountToAdd;
+    sessionStorage.setItem("actualTake", actualTake);
+    
+    maxTake = remainingTeamMembers * 100000 - actualTake;
+    amountToAdd = Math.min(maxTake, 50000);
+    
     var p1 = document.getElementById("textS7P1");
-    typeText(p1, "Ok " + sessionStorage.getItem("userName") + " , we're in the vault and have the money, we could only lift " + sessionStorage.getItem("finalTake") + " , but we've got it. Let's get out of here.");
-}
-
+    p1.innerHTML = "Ok " + sessionStorage.getItem("userName") + ", you've added $" + amountToAdd.toLocaleString() + " to your take. Total: $" + actualTake.toLocaleString() + " (max: $" + maxTake.toLocaleString() + ")";
+  }
+  
+  
 //scene 8 tripping over 
 function scene8() {
     var p1 = document.getElementById("textS8P1");
