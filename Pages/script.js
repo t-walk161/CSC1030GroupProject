@@ -412,5 +412,8 @@ function checkCode(){
         document.getElementById("showStickyNoteButton").style.visibility = "hidden";
         document.getElementById("codeContinue").classList.remove("hideMe");
     }
+    else{
+        alert("Code Incorrect");
+    }
 
 }
