@@ -40,7 +40,7 @@ function inputName() {
         sessionStorage.setItem("clicksMade", 0);
         sessionStorage.setItem("NoOfDecisionsMade", 0);
         sessionStorage.setItem("remainingTeamMembers", 4);
-        sessionStorage.setItem("finalTake", 0);
+        sessionStorage.setItem("actualTake", 0);
 
         console.log("Name Successfully Set To " + sessionStorage.getItem("userName"));
         document.getElementById("enterName").classList.add("hideMe");
@@ -251,12 +251,12 @@ function scene6(arg) {
     }
 }
 
-function scene7(){
+function scene7() { //scene 7 - Get Money
     stopText = true;
     var p1 = document.getElementById("textS7P1");
     typeText(p1, "Ok, we're in the vault, let's get to work. Start grabbing the money, but let's get out of here as soon as we can.");
 }
-function getMoney() {  //scene 7 - Get Money
+function getMoney() {
     var remainingTeamMembers = parseInt(sessionStorage.getItem("remainingTeamMembers"));
     var actualTake = parseInt(sessionStorage.getItem("actualTake")) || 0;
     var maxTake = remainingTeamMembers * 100000;
@@ -267,7 +267,16 @@ function getMoney() {  //scene 7 - Get Money
         console.log(actualTake);
         var p1 = document.getElementById("textS7P1");
         p1.innerHTML = "You've already maxed out your take. Time to leave!";
+    } else if (actualTake + amountToAdd >= maxTake) {
+        // This is the final click, add the remaining amount up to the max value
+        var remainingToAdd = maxTake - actualTake;
+        actualTake += remainingToAdd;
+        sessionStorage.setItem("actualTake", actualTake);
+
+        var p1 = document.getElementById("textS7P1");
+        p1.innerHTML = "Ok " + sessionStorage.getItem("userName") + ", you've added $" + remainingToAdd.toLocaleString() + " to your take. Total: $" + actualTake.toLocaleString() + " (max: $" + maxTake.toLocaleString() + ")";
     } else {
+        // Not the final click, add the usual amount
         actualTake += amountToAdd;
         sessionStorage.setItem("actualTake", actualTake);
         maxTake = remainingTeamMembers * 100000;
@@ -297,9 +306,9 @@ function helpCrew() {
 }
 function leaveCrew() {
     stopText = true;
-    var takePerPerson = sessionStorage.getItem("finalTake") / sessionStorage.getItem("remainingTeamMembers");
+    var takePerPerson = sessionStorage.getItem("actualTake") / sessionStorage.getItem("remainingTeamMembers");
     sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
-    sessionStorage.setItem("finalTake", parseInt(sessionStorage.getItem("finalTake")) - takePerPerson);
+    sessionStorage.setItem("actualTake", parseInt(sessionStorage.getItem("actualTake")) - takePerPerson);
     sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
 }
@@ -307,13 +316,13 @@ function leaveCrew() {
 //success screen
 function scene9() {
     var p1 = document.getElementById("textS9P1");
-    typeText(p1, "Good Job " + sessionStorage.getItem("userName") + ", you completed the job with just " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + sessionStorage.getItem("finalTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
+    typeText(p1, "Good Job " + sessionStorage.getItem("userName") + ", you completed the job with just " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + sessionStorage.getItem("actualTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
 
 }
 //failed screen 
 function scene10() {
     var p1 = document.getElementById("textS10P1");
-    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job because you ran out of time. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + sessionStorage.getItem("finalTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
+    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job because you ran out of time. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + sessionStorage.getItem("actualTake") + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
 
 }
 function hideTimer() {
