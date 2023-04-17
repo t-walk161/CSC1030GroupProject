@@ -37,7 +37,6 @@ function inputName() {
     }
     else {
         sessionStorage.setItem("userName", name);
-        sessionStorage.setItem("clicksMade", 0);
         sessionStorage.setItem("NoOfDecisionsMade", 0);
         sessionStorage.setItem("remainingTeamMembers", 4);
         sessionStorage.setItem("actualTake", 0);
