@@ -290,7 +290,7 @@ function getMoney() {
 function scene8() {
     var p1 = document.getElementById("textS8P1");
     if (sessionStorage.getItem("crowdControl") == "true") {
-        typeText(p1, "We've grabbed the guy we left on crowd control on the way out and gave him some money to hold, but another crew member tripped over and dropped the money. Do you want to help the crew or leave them to it? We'll lose the their money if we leave them!");
+        typeText(p1, "We've grabbed the guy we left on crowd control on the way out, but another crew member tripped over and dropped the money. Do you want to help the crew or leave them to it? We'll lose the their money if we leave them!");
         sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) + 1);
     }
     else {
