@@ -39,7 +39,7 @@ Mike Voiceover
 
 BUGS
 Music stops playing after starting game - needs session storage? < FIXED
-after failure and going back to main menu. Everything needs reset, sticky note comes up on 2nd game.
+After finishing one game and restarting, sticky note comes up.
 
 monday 17th - mike, caleb, thomas - finish powerpoint, photo of crew member tripping over 
             - taylor, adam - api for tripping over?, keypad if possible.
