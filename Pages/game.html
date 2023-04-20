@@ -32,7 +32,8 @@
         <button id = "stickyButton" class = "optionButton" style ="z-index: 10000;" onclick="toggleStickyNote();">Close</button>
     </div>
     <div id="backgroundImg" class="bgImgBox">
-        
+
+        <button onclick="showScene(6)">keypad</button>
         <button onclick="showScene(9)"> success</button>
         <button onclick="showScene(10)"> failure</button>
 
@@ -67,7 +68,7 @@
                     <option value="hard">Hard</option>
                 </select>
                 <button id="LoudSelect" value="Loud" type="button"
-                    onclick="setDifficulty(); showScene(2); startGame();">Start !</button>
+                    onclick="setDifficulty(); showScene(2); startGame();">Start</button>
             </div>
         </section>
 

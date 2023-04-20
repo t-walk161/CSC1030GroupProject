@@ -406,13 +406,15 @@ function checkCode(){
     if (enteredCode == correctCode){
         stopText = true;
         var p1 = document.getElementById("textS6P1");
-        typeText(p1, "Sweet, that worked, we're in");
+        typeText(p1, "Sweet, that worked, we're in.");
         document.getElementById("keypad").style.visibility = "hidden";
         document.getElementById("showStickyNoteButton").style.visibility = "hidden";
         document.getElementById("codeContinue").classList.remove("hideMe");
     }
     else{
-        alert("Code Incorrect");
+        clearCode();
+        var p1 = document.getElementById("textS6P1");
+        typeText(p1, "That seems like it didn't work, try again.");
     }
 
 }
