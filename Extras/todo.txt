@@ -38,7 +38,7 @@ Mike Voiceover
 
 
 BUGS
-Music stops playing after starting game - needs session storage? < FIXED
+Cenetring the continue button after vault code entered.
 After finishing one game and restarting, sticky note comes up.
 
 monday 17th - mike, caleb, thomas - finish powerpoint, photo of crew member tripping over 
