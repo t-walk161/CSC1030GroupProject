@@ -310,7 +310,6 @@ function leaveCrew() {
     var takePerPerson = sessionStorage.getItem("actualTake") / sessionStorage.getItem("remainingTeamMembers");
     sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
     sessionStorage.setItem("actualTake", parseInt(sessionStorage.getItem("actualTake")) - takePerPerson);
-    sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
 }
 
