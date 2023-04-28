@@ -335,7 +335,7 @@ function scene11() {
 //failed screen got caught
 function scene12() {
     var p1 = document.getElementById("textS12P1");
-    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job because you got caught. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
+    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", the police surrounded you and your crew. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
 }
 
 function hideTimer() {
