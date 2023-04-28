@@ -107,6 +107,8 @@ function startScene(num) {
         case 8: scene8(); break;
         case 9: scene9(); break;
         case 10: scene10(); break;
+        case 11: scene11(); break;
+        case 12: scene12(); break;
         default: console.log("WARNING: Selected Scene does not have any function");
     }
 }
@@ -311,26 +313,37 @@ function leaveCrew() {
     var takePerPerson = sessionStorage.getItem("actualTake") / sessionStorage.getItem("remainingTeamMembers");
     sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
     sessionStorage.setItem("actualTake", parseInt(sessionStorage.getItem("actualTake")) - takePerPerson);
-    sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
 }
 
-//success screen
+//scene 9 - escape front or back entrance 
 function scene9() {
     stopTimer();
     hideTimer();
     var p1 = document.getElementById("textS9P1");
-    typeText(p1, "Good Job " + sessionStorage.getItem("userName") + ", you completed the job with just " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
-
+    typeText(p1, "Ok, time to get out of here. Do you want to go out the front or back entrance?");
 }
-//failed screen 
+
+//success screen
 function scene10() {
     stopTimer();
     hideTimer();
     var p1 = document.getElementById("textS10P1");
-    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job because you ran out of time. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
+    typeText(p1, "Good Job " + sessionStorage.getItem("userName") + ", you completed the job with just " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
 
 }
+//failed screen ran out of time  
+function scene11() {
+    var p1 = document.getElementById("textS11P1");
+    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job because you ran out of time. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
+}
+
+//failed screen got caught
+function scene12() {
+    var p1 = document.getElementById("textS12P1");
+    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", the police surrounded you and your crew. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
+}
+
 function hideTimer() {
     var timer = document.getElementById("timer");
     timer.style.visibility = "hidden";
@@ -355,7 +368,7 @@ function startTimer() {
         if (timeRemaining <= 0) {
             //TIMER IS UP
             timer.style.visibility = "hidden";
-            showScene(10);
+            showScene(11);
             stopTimer();
 
         }
