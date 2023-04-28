@@ -170,21 +170,28 @@
                 <button class="optionButton" type="button" onclick="helpCrew(); showScene(9)">Help the crew
                     member</button>
             </div>
-
         </section>
 
-        <section id="scene9"> <!--Ending Screen Success-->
+        <section id="scene9"><!--Exit Scene--->
+        <div class="buttonContainer">
+            <p id="textS9P1" class="gameText" style="text-align: center;"></p>
+            <button class="optionButton" type="button" onclick="showScene(11)">Front entrance</button>
+            <button class="optionButton" type="button" onclick="showScene(10)">Back entrance</button>
+        </div>
+        </section>
+
+        <section id="scene10"> <!--Ending Screen Success-->
             <div class="buttonContainer">
             <h1>Mission Accomplished</h1>
-            <p id="textS9P1" class="gameText" style="text-align: center;">Scene 9</p>
+            <p id="textS10P1" class="gameText" style="text-align: center;">Scene 10</p>
             <button id="backToMenu" class="menuButton" type="button" onclick="showScene(0);">Back to Main Menu</button>
             </div>
         </section>
 
-        <section id="scene10"> <!--Ending Screen Failure-->
+        <section id="scene11"> <!--Ending Screen Failure-->
             <div class="buttonContainer">
             <h1>Mission Failed</h1>
-            <p id="textS10P1" class="gameText" style="text-align: center;">Scene 10</p>
+            <p id="textS11P1" class="gameText" style="text-align: center;">Scene 11</p>
             <button id="backToMenu" class="menuButton" type="button" onclick="showScene(0);">Back to Main Menu</button>
             </div>
         </section>
