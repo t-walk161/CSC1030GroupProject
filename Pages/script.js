@@ -317,12 +317,16 @@ function leaveCrew() {
 
 //success screen
 function scene9() {
+    stopTimer();
+    hideTimer();
     var p1 = document.getElementById("textS9P1");
     typeText(p1, "Good Job " + sessionStorage.getItem("userName") + ", you completed the job with just " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
 
 }
 //failed screen 
 function scene10() {
+    stopTimer();
+    hideTimer();
     var p1 = document.getElementById("textS10P1");
     typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job because you ran out of time. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
 
