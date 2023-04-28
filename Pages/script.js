@@ -51,9 +51,9 @@ function inputName() {
 function setDifficulty() {
     var timeRemaining = 0;
     switch (document.getElementById("difficultySelect").value) {
-        case "easy": timeRemaining = 300000; break; //5 Mins
-        case "med": timeRemaining = 180000; break; //3 Mins
-        case "hard": timeRemaining = 90000; break; //1.5 Mins
+        case "easy": timeRemaining = 300000; sessionStorage.setItem("setDifficulty", "Easy"); break; //5 Mins
+        case "med": timeRemaining = 180000; sessionStorage.setItem("setDifficulty", "Medium");break; //3 Mins
+        case "hard": timeRemaining = 90000; sessionStorage.setItem("setDifficulty", "Hard");break; //1.5 Mins
     }
     sessionStorage.setItem("timeRemaining", timeRemaining);
     console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
@@ -236,6 +236,9 @@ function blowUpDoor() {
 //Scene 6 - Security Gate
 function scene6(arg) {
     stopText = true;
+    if(sessionStorage.setDifficulty == "Hard"){
+        document.getElementById("showStickyNoteButton").classList.add("hideMe");
+    }
     var p1 = document.getElementById("textS6P1");
     if (arg == 0) { //DRILLED INTO VAULT
         sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
