@@ -39,7 +39,7 @@ Mike Voiceover
 
 BUGS
 Cenetring the continue button after vault code entered.
-After finishing one game and restarting, sticky note comes up.
+After finishing one game and restarting, sticky note comes up. Timer keeps going.
 
 monday 17th - mike, caleb, thomas - finish powerpoint, photo of crew member tripping over 
             - taylor, adam - api for tripping over?, keypad if possible.
