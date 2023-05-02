@@ -173,11 +173,12 @@
 
         </section>
 
-        <section id="scene9"> <!--Ending Screen Success-->
+         <section id="scene9"><!--Exit Scene--->
             <div class="buttonContainer">
-            <h1>Mission Accomplished</h1>
-            <p id="textS9P1" class="gameText" style="text-align: center;">Scene 9</p>
-            <button id="backToMenu" class="menuButton" type="button" onclick="window.location.reload();">Back to Main Menu</button>
+                <p id="textS9P1" class="gameText" style="text-align: center;"></p>
+                <button class="optionButton" type="button" onclick="showScene(12)">Front entrance</button>
+                <!--Failure-->
+                <button class="optionButton" type="button" onclick="showScene(10)">Back entrance</button> <!--Success-->
             </div>
         </section>
 
