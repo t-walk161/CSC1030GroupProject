@@ -452,5 +452,8 @@ function checkCode(){
         var p1 = document.getElementById("textS6P1");
         typeText(p1, "That seems like it didn't work, try again.");
     }
+}
 
+function refreshPage(){
+    window.location.reload();
 }
