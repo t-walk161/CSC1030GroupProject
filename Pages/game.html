@@ -26,16 +26,18 @@
 </head>
 
 <body>
-    <div id="stickyContainer">
-        <img id="stickyNote" src="../photos/note-147951.png" alt="sticky note containing code">
-        <div class="note-text" style="z-index: 10000;">
-            <p class="gameText" id="stickyNoteText">Vault Code: </p>
-        </div>
-        <button id="stickyButton" class="optionButton" style="z-index: 10000;"
-            onclick="toggleStickyNote();">Close</button>
+    <div id ="stickyContainer">
+        <img id = "stickyNote" src ="../photos/note-147951.png" alt="sticky note containing code">
+        <div class="note-text" style ="z-index: 10000;"><p class = "gameText" id ="stickyNoteText">Vault Code: </p></div>
+        <button id = "stickyButton" class = "optionButton" style ="z-index: 10000;" onclick="toggleStickyNote();">Close</button>
     </div>
     <div id="backgroundImg" class="bgImgBox">
-        <button onclick="toggleStickyNote();">Show the Note</button>
+
+        <button onclick="showScene(6)">keypad</button>
+        <button onclick="showScene(9)"> success</button>
+        <button onclick="showScene(10)"> failure</button>
+
+        <button onclick="toggleStickyNote();">Show the Note</button> 
 
         <div id="timerBox">
             <p id="timer">Time Remaining:</p>
@@ -50,7 +52,7 @@
                 <button class="menuButton" type="button" onclick="showScene(98);">Options</button>
             </div>
         </section>
-
+        
         <section id="scene1">
             <div id="enterName" class="centerMe showMe">
                 <label for="enterNameBox">Enter your name:</label>
@@ -83,7 +85,7 @@
                 p1
             </p>
             <div class="buttonContainer">
-                <button id="startHeist" class="optionButton" type="button" onclick="showScene(4)">Start the
+                <button id="startHeist" class="optionButton" type="button" onclick="showScene(4); gunshotPlay()">Start the
                     heist</button>
             </div>
         </section>
@@ -101,8 +103,7 @@
                     control</button>
                 <button id="crowdContinue" class="optionButton hideMe" type="button" onclick="showScene(5)">Head to the
                     vault</button>
-                <button id="showSticky" class="optionButton hideMe" type="button" onclick="toggleStickyNote();">Show The
-                    Sticky Note</button>
+                <button id="showSticky" class = "optionButton hideMe" type = "button" onclick = "toggleStickyNote();">Show The Sticky Note</button>
             </div>
         </section>
 
@@ -113,44 +114,42 @@
                 <button class="optionButton" type="button" onclick="drillDoor();">Use the drill on the door</button>
             </div>
             <div id="scene5BombButtons" class="buttonContainer" style="visibility: hidden;">
-                <button class="optionButton" type="button" onclick="blowUpDoor();">Boom Time!</button>
+                <button class="optionButton" type="button" onclick="blowUpDoor(); explosionPlay()">Boom Time!</button>
             </div>
             <div id="scene5DrillButtons" class="buttonContainer" style="visibility: hidden;">
-                <button class="optionButton" type="button" onclick="showScene(6);scene6(0);">Get it going!</button>
+                <button class="optionButton" type="button" onclick="showScene(6);scene6(0); drillPlay()">Get it going!</button>
             </div>
         </section>
 
         <section id="scene6"> <!--- Scene 6 Security Gate -->
             <p id="textS6P1" class="gameText"></p>
-            <div id="keypad" class="keypad-container">
+            <div id = "keypad" class="keypad-container">
                 <div class="keypad">
-                    <div class="row">
-                        <button class="keypad-button" onclick="addDigit('1')">1</button>
-                        <button class="keypad-button" onclick="addDigit('2')">2</button>
-                        <button class="keypad-button" onclick="addDigit('3')">3</button>
-                    </div>
-                    <div class="row">
-                        <button class="keypad-button" onclick="addDigit('4')">4</button>
-                        <button class="keypad-button" onclick="addDigit('5')">5</button>
-                        <button class="keypad-button" onclick="addDigit('6')">6</button>
-                    </div>
-                    <div class="row">
-                        <button class="keypad-button" onclick="addDigit('7')">7</button>
-                        <button class="keypad-button" onclick="addDigit('8')">8</button>
-                        <button class="keypad-button" onclick="addDigit('9')">9</button>
-                    </div>
-                    <div class="row">
-                        <button class="keypad-button" onclick="clearCode();">C</button>
-                        <button class="keypad-button" onclick="addDigit('0')">0</button>
-                        <button class="keypad-button" onclick="checkCode();">✓</button>
-                    </div>
+                  <div class="row">
+                    <button class="keypad-button" onclick="addDigit('1'); keypadPlay();">1</button>
+                    <button class="keypad-button" onclick="addDigit('2'); keypadPlay();">2</button>
+                    <button class="keypad-button" onclick="addDigit('3'); keypadPlay();">3</button>
+                  </div>
+                  <div class="row">
+                    <button class="keypad-button" onclick="addDigit('4'); keypadPlay();">4</button>
+                    <button class="keypad-button" onclick="addDigit('5'); keypadPlay();">5</button>
+                    <button class="keypad-button" onclick="addDigit('6'); keypadPlay();">6</button>
+                  </div>
+                  <div class="row">
+                    <button class="keypad-button" onclick="addDigit('7'); keypadPlay();">7</button>
+                    <button class="keypad-button" onclick="addDigit('8'); keypadPlay();">8</button>
+                    <button class="keypad-button" onclick="addDigit('9'); keypadPlay();">9</button>
+                  </div>
+                  <div class="row">
+                    <button class="keypad-button" onclick="clearCode(); keypadPlay();">C</button>
+                    <button class="keypad-button" onclick="addDigit('0'); keypadPlay();">0</button>
+                    <button class="keypad-button" onclick="checkCode(); keypadPlay();">✓</button>
+                  </div>
                 </div>
-            </div>
-            <div class="buttonContainer">
-                <button id="showStickyNoteButton" class="optionButton" type="button" onclick="toggleStickyNote();">Show
-                    Sticky Note</button><br>
-                <button id="codeContinue" class="optionButton hideMe" type="button"
-                    onclick="showScene(7);">Continue</button>
+              </div>
+              <div class="buttonContainer">
+                <button id = "showStickyNoteButton" class="optionButton" type="button" onclick="toggleStickyNote();">Show Sticky Note</button>
+                <button id = "codeContinue" class ="optionButton hideMe" type = "button" onclick = "showScene(7);">Continue</button>
             </div>
         </section>
 
@@ -171,38 +170,22 @@
                 <button class="optionButton" type="button" onclick="helpCrew(); showScene(9)">Help the crew
                     member</button>
             </div>
+
         </section>
 
-        <section id="scene9"><!--Exit Scene--->
+        <section id="scene9"> <!--Ending Screen Success-->
             <div class="buttonContainer">
-                <p id="textS9P1" class="gameText" style="text-align: center;"></p>
-                <button class="optionButton" type="button" onclick="showScene(12)">Front entrance</button>
-                <!--Failure-->
-                <button class="optionButton" type="button" onclick="showScene(10)">Back entrance</button> <!--Success-->
+            <h1>Mission Accomplished</h1>
+            <p id="textS9P1" class="gameText" style="text-align: center;">Scene 9</p>
+            <button id="backToMenu" class="menuButton" type="button" onclick="window.location.reload();">Back to Main Menu</button>
             </div>
         </section>
 
-        <section id="scene10"> <!--Ending Screen Success-->
+        <section id="scene10"> <!--Ending Screen Failure-->
             <div class="buttonContainer">
-                <h1>Mission Accomplished</h1>
-                <p id="textS10P1" class="gameText" style="text-align: center;">Scene 10</p>
-                <button id="backToMenu" class="menuButton" type="button" onclick="showScene(0);">Back to Main Menu</button>
-            </div>
-        </section>
-
-        <section id="scene11"> <!--Ending Screen Failure (time) -->
-            <div class="buttonContainer">
-                <h1>Mission Failed</h1>
-                <p id="textS11P1" class="gameText" style="text-align: center;">Scene 11</p>
-                <button id="backToMenu" class="menuButton" type="button" onclick="showScene(0);">Back to Main Menu</button>
-            </div>
-        </section>
-
-        <section id="scene12"><!-- Ending Screen Failure (caught) -->
-            <div class="buttonContainer">
-                <h1>Mission Failed</h1>
-                <p id="textS12P1" class="gameText" style="text-align: center;">Scene 12</p>
-                <button id="backToMenu" class="menuButton" type="button" onclick="showScene(0);">Back to Main Menu</button>
+            <h1>Mission Failed</h1>
+            <p id="textS10P1" class="gameText" style="text-align: center;">Scene 10</p>
+            <button id="backToMenu" class="menuButton" type="button" onclick="window.location.reload();">Back to Main Menu</button>
             </div>
         </section>
 
