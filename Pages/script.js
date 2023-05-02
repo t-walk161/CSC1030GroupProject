@@ -318,8 +318,6 @@ function leaveCrew() {
 
 //scene 9 - escape front or back entrance 
 function scene9() {
-    stopTimer();
-    hideTimer();
     var p1 = document.getElementById("textS9P1");
     typeText(p1, "Ok, time to get out of here. Do you want to go out the front or back entrance?");
 }
@@ -334,20 +332,25 @@ function scene10() {
 }
 //failed screen ran out of time  
 function scene11() {
+    stopTimer();
+    hideTimer();
     var p1 = document.getElementById("textS11P1");
     typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job because you ran out of time. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
 }
 
 //failed screen got caught
 function scene12() {
+    stopTimer();
+    hideTimer();
     var p1 = document.getElementById("textS12P1");
     typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", the police surrounded you and your crew. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
 }
 
 function hideTimer() {
-    var timer = document.getElementById("timer");
-    timer.style.visibility = "hidden";
+    var timerBox = document.getElementById("timerBox");
+    timerBox.style.visibility = "hidden";
 }
+
 function showTimer() {
     var timer = document.getElementById("timer");
     timer.style.visibility = "visible";
