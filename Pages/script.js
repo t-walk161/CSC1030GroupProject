@@ -9,25 +9,31 @@ var explosion = new Audio("../Audio/explosion.mp3")
 var drill = new Audio("../Audio/drill.mp3")
 var keypad = new Audio("../Audio/keypad.mp3")
 function playAudio() {
+    sessionStorage.setItem("playSFX", "true");
     // play the audio
     audio.play();
 }
 
 function stopAudio() {
     // pause the audio
+    sessionStorage.setItem("playSFX", "false");
     audio.pause();
 }
 
 function setVolume() {
     // volume slider
     audio.volume = document.getElementById("volume-slider").value;
+    gunshot.volume = document.getElementById("volume-slider").value;
+    explosion.volume = document.getElementById("volume-slider").value;
+    drill.volume = document.getElementById("volume-slider").value;
+    keypad.volume = document.getElementById("volume-slider").value;
 }
 
 //change text size
 function changeFontSize(size) {
     var items = document.querySelectorAll(".gameText");
     for (var i = 0; i < items.length; i++) {
-        items[i].style.fontSize = size + "px";
+        items[i].style.fontSize = size + "px";S
     }
 }
 
@@ -130,7 +136,10 @@ function scene3() {
     document.getElementById("startHeist").disabled = false;
 }
 function gunshotPlay() {
-    gunshot.play();
+    if(sessionStorage.getItem('playSFX') == "true"){
+        gunshot.play();
+    }
+        
 }
 //Scene 4
 function scene4() {
@@ -242,11 +251,13 @@ function blowUpDoor() {
 }
 function explosionPlay()
 {
-    explosion.play();
+    if(sessionStorage.getItem("playSFX") == "true")
+        explosion.play();
 }
 function drillPlay()
 {
-    drill.play();
+    if(sessionStorage.getItem("playSFX") == "true")
+        drill.play();
 }
 //Scene 6 - Security Gate
 function scene6(arg) {
@@ -266,7 +277,8 @@ function scene6(arg) {
 }
 function keypadPlay()
 {
-    keypad.play();
+    if(sessionStorage.getItem("playSFX") == "true")
+        keypad.play();
 }
 
 function scene7() { //scene 7 - Get Money
