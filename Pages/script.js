@@ -338,13 +338,14 @@ function scene9() {
 //failed screen 
 function scene10() {
     var p1 = document.getElementById("textS10P1");
+}
 //failed screen ran out of time  
 function scene11() {
     stopTimer();
     hideTimer();
     var p1 = document.getElementById("textS11P1");
     typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job because you ran out of time. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
-
+}
 //failed screen got caught
 function scene12() {
     stopTimer();
