@@ -329,21 +329,37 @@ function leaveCrew() {
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
 }
 
-//success screen
 function scene9() {
+    stopTimer();
+    hideTimer();
     var p1 = document.getElementById("textS9P1");
-    typeText(p1, "Good Job " + sessionStorage.getItem("userName") + ", you completed the job with just " + (sessionStorage.getItem("timeRemaining") / 1000) + " seconds left, gathering a total of $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist.");
-
+    typeText(p1, "Ok, time to get out of here. Do you want to go out the front or back entrance?");
 }
-//failed screen 
+
+//success screen
 function scene10() {
+    stopTimer();
+    hideTimer();
     var p1 = document.getElementById("textS10P1");
-    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job because you ran out of time. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
-
 }
+//failed screen ran out of time  
+function scene11() {
+    stopTimer();
+    hideTimer();
+    var p1 = document.getElementById("textS11P1");
+    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", you failed the job because you ran out of time. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
+}
+//failed screen got caught
+function scene12() {
+    stopTimer();
+    hideTimer();
+    var p1 = document.getElementById("textS12P1");
+    typeText(p1, "Unlucky " + sessionStorage.getItem("userName") + ", the police surrounded you and your crew. You made " + sessionStorage.getItem("NoOfDecisionsMade") + " decisions during the heist, and you could have walked away with $" + Math.round(sessionStorage.getItem("actualTake")) + " between a total of " + sessionStorage.getItem("remainingTeamMembers") + " crew members.");
+}
+
 function hideTimer() {
-    var timer = document.getElementById("timer");
-    timer.style.visibility = "hidden";
+    var timerBox = document.getElementById("timerBox");
+    timerBox.style.visibility = "hidden";
 }
 function showTimer() {
     var timer = document.getElementById("timer");
