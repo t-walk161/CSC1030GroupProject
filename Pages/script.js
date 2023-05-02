@@ -329,6 +329,7 @@ function scene10() {
     stopTimer();
     hideTimer();
     var p1 = document.getElementById("textS10P1");
+    
 }
 //failed screen ran out of time  
 function scene11() {
@@ -438,5 +439,8 @@ function checkCode(){
         var p1 = document.getElementById("textS6P1");
         typeText(p1, "That seems like it didn't work, try again.");
     }
+}
 
+function refreshPage(){
+    window.location.reload();
 }
