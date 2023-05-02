@@ -4,8 +4,10 @@ const regex = /^\D*$/;
 // Options Menu
 // audio 
 var audio = new Audio("../Audio/menuSong.mp3");
-
-
+var gunshot = new Audio("../Audio/gunshot.mp3")
+var explosion = new Audio("../Audio/explosion.mp3")
+var drill = new Audio("../Audio/drill.mp3")
+var keypad = new Audio("../Audio/keypad.mp3")
 function playAudio() {
     // play the audio
     audio.play();
@@ -51,9 +53,9 @@ function inputName() {
 function setDifficulty() {
     var timeRemaining = 0;
     switch (document.getElementById("difficultySelect").value) {
-        case "easy": timeRemaining = 300000; sessionStorage.setItem("setDifficulty", "Easy"); break; //5 Mins
-        case "med": timeRemaining = 180000; sessionStorage.setItem("setDifficulty", "Medium");break; //3 Mins
-        case "hard": timeRemaining = 90000; sessionStorage.setItem("setDifficulty", "Hard");break; //1.5 Mins
+        case "easy": timeRemaining = 300000; break; //5 Mins
+        case "med": timeRemaining = 180000; break; //3 Mins
+        case "hard": timeRemaining = 90000; break; //1.5 Mins
     }
     sessionStorage.setItem("timeRemaining", timeRemaining);
     console.log("Time Remaining Set To " + sessionStorage.getItem("timeRemaining"));
@@ -126,6 +128,9 @@ function scene3() {
     var p1 = document.getElementById("textS3P1");
     typeText(p1, "There's no turning back now " + sessionStorage.getItem('userName') + "! Let's get cracking! Take out your gun and fire a few shots to scare these people.");
     document.getElementById("startHeist").disabled = false;
+}
+function gunshotPlay() {
+    gunshot.play();
 }
 //Scene 4
 function scene4() {
@@ -235,12 +240,17 @@ function blowUpDoor() {
             console.log(error.message);
         });
 }
+function explosionPlay()
+{
+    explosion.play();
+}
+function drillPlay()
+{
+    drill.play();
+}
 //Scene 6 - Security Gate
 function scene6(arg) {
     stopText = true;
-    if(sessionStorage.setDifficulty == "Hard"){
-        document.getElementById("showStickyNoteButton").classList.add("hideMe");
-    }
     var p1 = document.getElementById("textS6P1");
     if (arg == 0) { //DRILLED INTO VAULT
         sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
@@ -253,6 +263,10 @@ function scene6(arg) {
         sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
         typeText(p1, "Ok, we've blown up the ... OH NO! The door blew up and killed one of the team! There's only " + sessionStorage.getItem("remainingTeamMembers") + " of us left, but we need to keep moving");
     }
+}
+function keypadPlay()
+{
+    keypad.play();
 }
 
 function scene7() { //scene 7 - Get Money
@@ -313,10 +327,10 @@ function leaveCrew() {
     var takePerPerson = sessionStorage.getItem("actualTake") / sessionStorage.getItem("remainingTeamMembers");
     sessionStorage.setItem("remainingTeamMembers", parseInt(sessionStorage.getItem("remainingTeamMembers")) - 1);
     sessionStorage.setItem("actualTake", parseInt(sessionStorage.getItem("actualTake")) - takePerPerson);
+    sessionStorage.setItem("timeRemaining", parseInt(sessionStorage.getItem("timeRemaining")) - 30000); // 30 Second Time reduction
     sessionStorage.setItem("NoOfDecisionsMade", parseInt(sessionStorage.getItem("NoOfDecisionsMade")) + 1);
 }
 
-//scene 9 - escape front or back entrance 
 function scene9() {
     stopTimer();
     hideTimer();
@@ -350,7 +364,6 @@ function hideTimer() {
     var timerBox = document.getElementById("timerBox");
     timerBox.style.visibility = "hidden";
 }
-
 function showTimer() {
     var timer = document.getElementById("timer");
     timer.style.visibility = "visible";
@@ -371,7 +384,7 @@ function startTimer() {
         if (timeRemaining <= 0) {
             //TIMER IS UP
             timer.style.visibility = "hidden";
-            showScene(11);
+            showScene(10);
             stopTimer();
 
         }
