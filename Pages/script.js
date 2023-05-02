@@ -109,6 +109,8 @@ function startScene(num) {
         case 8: scene8(); break;
         case 9: scene9(); break;
         case 10: scene10(); break;
+        case 11: scene11(); break;
+        case 12: scene12(); break;
         default: console.log("WARNING: Selected Scene does not have any function");
     }
 }
