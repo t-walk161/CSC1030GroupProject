@@ -2,7 +2,7 @@
 const regex = /^\D*$/;
 
 // Options Menu
-// audio 
+// audio
 var audio = new Audio("../Audio/menuSong.mp3");
 var gunshot = new Audio("../Audio/gunshot.mp3")
 var explosion = new Audio("../Audio/explosion.mp3")
@@ -396,7 +396,7 @@ function startTimer() {
         if (timeRemaining <= 0) {
             //TIMER IS UP
             timer.style.visibility = "hidden";
-            showScene(10);
+            showScene(11);
             stopTimer();
 
         }
