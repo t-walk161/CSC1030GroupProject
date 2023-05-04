@@ -33,7 +33,7 @@ function setVolume() {
 function changeFontSize(size) {
     var items = document.querySelectorAll(".gameText");
     for (var i = 0; i < items.length; i++) {
-        items[i].style.fontSize = size + "px";S
+        items[i].style.fontSize = size + "px";
     }
 }
 
